@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "AIGAP Evaluation Dataset: AI Design Reviewer and Risk Classifier Case Studies"
+type: dataset
+authors:
+  - given-names: Pasindu
+    affiliation: "Ethiksa (Pvt) Ltd"
+date-released: 2026-09-01
+license: CC-BY-4.0
+repository-code: "https://github.com/REPLACE_WITH_ORG/aigap-evaluation-dataset"
+keywords:
+  - AI governance
+  - compliance evaluation
+  - large language models
+  - risk classification
+  - retrieval-augmented generation
+abstract: >
+  Real evaluation outputs from AIGAP's AI Design Reviewer and Risk
+  Classifier pipeline, covering four case studies spanning the Low
+  Risk to Critical Risk assurance spectrum, and a five-round
+  resubmission-convergence experiment documenting an evidentiary
+  regress phenomenon in LLM-assisted compliance evaluation.
