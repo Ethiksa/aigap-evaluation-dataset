@@ -1,0 +1,510 @@
+{
+  "registry_version": "aigap-v1.0",
+  "sealed": true,
+  "project_id": "proj-mediscan-ai-2026-001",
+  "intake_version": "1.0",
+  "created_at": "2026-06-01T08:00:00+00:00",
+  "project_description": "MediScan AI is an AI-powered diagnostic imaging assistant deployed in NHS-affiliated hospitals across the UK and a private hospital network in Sri Lanka. The system analyses chest X-rays and CT scans using a fine-tuned deep learning model (based on Meta LLaMA Vision) to detect early-stage lung cancer, pneumonia, and tuberculosis. It presents its findings as a clinical decision support report to radiologists, flagging high-risk cases for urgent review. The system processes sensitive health data including patient biometric identifiers (face scan for identity verification), medical imaging data, and electronic health records. Patients include adults and in paediatric wards, children under 18. The system integrates with the hospital PACS system and EHR via HL7 FHIR APIs. It is deployed as a regulated medical device under UK MDR 2002 and MHRA oversight. Cross-border data flows exist between the UK and Sri Lanka hospital networks, and the LLaMA Vision model is hosted on AWS US-East infrastructure.",
+  "domains": [
+    {
+      "domain": "healthcare",
+      "weight": 20.0,
+      "is_primary": true
+    },
+    {
+      "domain": "legal",
+      "weight": 20.0,
+      "is_primary": false
+    }
+  ],
+  "primary_domain": "healthcare",
+  "user_types": [
+    "vulnerable_adults",
+    "professionals"
+  ],
+  "children_minors": true,
+  "vulnerable_adults": true,
+  "deployment": "regulated_sector",
+  "rights_affecting": true,
+  "data_types": [
+    "health_data",
+    "biometric_data",
+    "personal_identifiable_information",
+    "special_category_data",
+    "children_data"
+  ],
+  "capability": "diagnostic_decision_support",
+  "human_oversight": "sometimes",
+  "testing_maturity": "pilot",
+  "generative_ai": false,
+  "output_modalities": [],
+  "testing_stage": "pilot",
+  "persuasion": false,
+  "adaptive_learning": true,
+  "external_deps": true,
+  "certification_expected": true,
+  "pre_trained_model": true,
+  "cross_border": "true",
+  "synthetic_data": false,
+  "jurisdiction_flags": [
+    "UK_GDPR",
+    "LK_PDPA",
+    "EU_AI_ACT",
+    "UK_MDR"
+  ],
+  "scale": "large",
+  "model_interpretability": "low",
+  "safety_critical": true,
+  "time_sensitive": true,
+  "subsystems": [
+    "ADR",
+    "AC"
+  ],
+  "multi_model": false,
+  "agentic": false,
+  "data_retention_capability": "partial",
+  "prior_incidents": [
+    "literature"
+  ],
+  "free_text_answers": {
+    "Q1_other": "Clinical diagnostic imaging in regulated hospital environments \u2014 UK and Sri Lanka NHS-affiliated and private hospital networks",
+    "Q2_other": "Radiologists and clinical staff as direct users; patients including children in paediatric wards as data subjects",
+    "Q5_other": "Medical imaging data (DICOM format chest X-rays and CT scans), electronic health records via HL7 FHIR, and biometric face scans for patient identity verification"
+  },
+  "llm_extractions": {
+    "questions_processed": [
+      "Q0",
+      "Q1",
+      "Q2",
+      "Q5"
+    ],
+    "extractions": {
+      "Q0": {
+        "extracted_value": "clinical_diagnostic_imaging_ai",
+        "confidence": 0.97,
+        "method": "auto_mapped",
+        "safety_flags": {
+          "children_minors": true,
+          "vulnerable_adults": true,
+          "has_autonomous_actions": false,
+          "safety_critical": true,
+          "rights_affecting": true
+        }
+      },
+      "Q1": {
+        "extracted_value": "healthcare",
+        "confidence": 0.99,
+        "method": "auto_mapped",
+        "note": "Primary domain confirmed as healthcare/medical. Secondary legal domain applies due to regulated medical device status."
+      },
+      "Q2": {
+        "extracted_value": "mixed_professionals_vulnerable",
+        "confidence": 0.95,
+        "method": "auto_mapped",
+        "safety_flags": {
+          "children_minors": true,
+          "vulnerable_adults": true,
+          "has_autonomous_actions": false,
+          "safety_critical": true,
+          "rights_affecting": true
+        }
+      },
+      "Q5": {
+        "extracted_value": "medical_imaging_ehr_biometric",
+        "confidence": 0.98,
+        "method": "auto_mapped",
+        "sensitivity": "High",
+        "contains_special_category": true,
+        "note": "Health data, biometric data, and children's data all confirmed. GDPR Article 9 applies."
+      }
+    },
+    "validated_at": "2026-06-01T07:55:00+00:00"
+  },
+  "level_assignment": {
+    "raw_score": 88,
+    "max_score": 100,
+    "percentage": 88.0,
+    "assurance_level": "Industrial",
+    "assurance_grade": "L3",
+    "mandatory_overrides_applied": [
+      "children_minors == true \u2192 Capstone minimum (confirmed at Industrial)",
+      "rights_affecting == true \u2192 Capstone minimum (confirmed at Industrial)",
+      "deployment == regulated_sector \u2192 Industrial minimum (forced)",
+      "safety_critical == true \u2192 Capstone minimum (confirmed at Industrial)",
+      "domain == healthcare \u2192 Capstone minimum (confirmed at Industrial)",
+      "UK_GDPR + rights_affecting \u2192 Capstone minimum (confirmed at Industrial)"
+    ],
+    "assigned_at": "2026-06-01T07:58:00+00:00"
+  },
+  "active_control_set": [
+    {
+      "control_id": "GOV-01",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Ownership and accountability \u2014 named responsible role",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "Who is the named accountable owner for MediScan AI, what clinical and technical decisions are they personally responsible for, and how is accountability maintained across the UK and Sri Lanka hospital networks?"
+    },
+    {
+      "control_id": "GOV-02",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Documented purpose and scope \u2014 intended use and limits",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What is the documented intended use of MediScan AI, what imaging modalities and conditions is it validated for, and what constitutes an out-of-scope use that must not be attempted?"
+    },
+    {
+      "control_id": "GOV-05",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Human oversight plan \u2014 when and how humans intervene",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "What mandatory radiologist review process governs MediScan AI outputs \u2014 specifically can any clinical decision be made based solely on MediScan AI output without radiologist sign-off, and what is the escalation process for high-risk flagged cases?"
+    },
+    {
+      "control_id": "GOV-06",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Incident response and escalation",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "If MediScan AI produces a false negative diagnosis that delays treatment, what incident response pathway is activated, who is notified including MHRA and clinical governance leads, and how are affected patients identified and remediated?"
+    },
+    {
+      "control_id": "HUMO-01",
+      "domain": "P3",
+      "category": "human_oversight",
+      "title": "Oversight roles defined and trained",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "What clinical oversight roles govern MediScan AI outputs \u2014 specifically who is qualified and responsible for reviewing AI-flagged cases, and what radiologist training is required before the system may be used in clinical workflow?"
+    },
+    {
+      "control_id": "PRIV-01",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data minimisation \u2014 only necessary data collected",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What patient data fields does MediScan AI collect, store, and process \u2014 specifically which biometric identifiers are required for patient matching, and how is the necessity of face scan biometrics justified when compared to less privacy-invasive identity verification methods?"
+    },
+    {
+      "control_id": "PRIV-02",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Lawful basis and consent",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What is the lawful basis under UK GDPR Article 9 for processing special category health data and biometric data \u2014 and for processing children's health data in paediatric wards, is there a specific consent or Article 9(2) exemption in place?"
+    },
+    {
+      "control_id": "PRIV-07",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Cross-border data transfer assessment",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3",
+        "E4"
+      ],
+      "base_question": "Patient imaging data flows between UK and Sri Lanka hospital networks and to AWS US-East for model inference. What Transfer Impact Assessments and international transfer mechanisms are in place for each of these flows, and has MHRA been notified of cross-border data processing?"
+    },
+    {
+      "control_id": "FAIR-01",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "Protected characteristics identified",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "Which patient groups could receive systematically lower diagnostic accuracy from MediScan AI \u2014 specifically patients from South Asian ethnic backgrounds in the Sri Lanka network, paediatric patients whose imaging characteristics differ from adult training data, and patients with comorbidities not well-represented in the training dataset?"
+    },
+    {
+      "control_id": "SAFE-01",
+      "domain": "P8",
+      "category": "safety",
+      "title": "Harm scenario identification",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What patient harm scenarios have been formally identified for MediScan AI \u2014 including false negative cancer detection leading to delayed treatment, false positive leading to unnecessary procedures, and system unavailability causing diagnostic workflow disruption in time-critical emergency presentations?"
+    },
+    {
+      "control_id": "SEC-01",
+      "domain": "P7",
+      "category": "security",
+      "title": "Access controls implemented",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E7"
+      ],
+      "base_question": "What authentication and role-based access controls govern clinical staff access to MediScan AI \u2014 specifically how are radiologist credentials managed, how is access to paediatric patient data restricted, and how are audit logs of AI-assisted clinical decisions maintained for MHRA compliance?"
+    },
+    {
+      "control_id": "SEC-06",
+      "domain": "P7",
+      "category": "security",
+      "title": "Pre-trained model supply chain security",
+      "level_applicable": [
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4",
+        "E7"
+      ],
+      "base_question": "MediScan AI is fine-tuned from Meta LLaMA Vision. What supply chain security assessment has been conducted on the base model \u2014 including known biases in training data, vulnerability to adversarial medical imaging attacks, and the process for incorporating security patches from Meta into the deployed fine-tuned version?"
+    },
+    {
+      "control_id": "SOC-01",
+      "domain": "P11",
+      "category": "societal",
+      "title": "Intended societal benefit articulated",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What is the measurable societal benefit of MediScan AI \u2014 specifically what is the target improvement in early lung cancer detection rates compared to radiologist-only diagnosis, and how will equity of benefit across UK and Sri Lanka patient populations be monitored?"
+    }
+  ],
+  "required_documents": {
+    "critical_must_upload": [
+      {
+        "document_id": "DOC-M-001",
+        "title": "MediScan AI Clinical Intended Use Statement",
+        "description": "Formal intended use statement approved by clinical governance committee defining validated imaging modalities, conditions, patient populations, and explicit contraindications.",
+        "format": "PDF",
+        "maps_to_controls": [
+          "GOV-02",
+          "SAFE-01"
+        ],
+        "evidence_type": "E4",
+        "upload_as": "R1 written answer supporting document"
+      },
+      {
+        "document_id": "DOC-M-002",
+        "title": "Radiologist Oversight Protocol",
+        "description": "Clinical protocol defining mandatory radiologist review requirements, escalation triggers, and documentation requirements for AI-assisted diagnostic decisions.",
+        "format": "PDF",
+        "maps_to_controls": [
+          "GOV-05",
+          "HUMO-01"
+        ],
+        "evidence_type": "E3",
+        "upload_as": "R1 written answer supporting document"
+      },
+      {
+        "document_id": "DOC-M-003",
+        "title": "GDPR Article 9 Lawful Basis Assessment \u2014 Health and Biometric Data",
+        "description": "Legal assessment confirming the lawful basis for processing special category health data, biometric data, and children's health data across UK and Sri Lanka networks.",
+        "format": "PDF",
+        "maps_to_controls": [
+          "PRIV-02",
+          "PRIV-07"
+        ],
+        "evidence_type": "E3",
+        "upload_as": "R1 written answer supporting document"
+      }
+    ]
+  },
+  "text_submissions": {
+    "GOV-05": "All MediScan AI outputs must be reviewed and signed off by a consultant radiologist before any clinical action is taken.",
+    "GOV-06": "Any false negative incident triggers immediate notification to the Clinical Governance Lead, CMO, and MHRA within the timelines required under UK MDR 2002.",
+    "HUMO-01": "Consultant radiologists must complete a 4-hour MediScan AI training programme before being granted access to review AI outputs.",
+    "PRIV-02": "Processing of health and biometric data is covered under UK GDPR Article 9(2)(h) for medical diagnosis purposes, with parental consent obtained for paediatric patients.",
+    "PRIV-07": "SCCs are in place for UK-to-Sri Lanka and UK-to-AWS data flows, with Transfer Impact Assessments completed for both and MHRA notified of cross-border processing.",
+    "FAIR-01": "Elevated accuracy disparity risk identified for South Asian patients and paediatric patients under 12, with mitigation through supplementary fine-tuning and mandatory senior radiologist review.",
+    "SAFE-01": "Formal harm scenario register covers false negatives, false positives, system unavailability, and wrong-patient errors, each with documented severity rating and mitigation controls.",
+    "SEC-01": "Access is controlled via NHS smart card SSO with RBAC; paediatric records require additional authorisation, and all AI report interactions are logged to a 7-year tamper-evident audit log.",
+    "SEC-06": "LLaMA Vision base model obtained from Meta official repository with checksum verification; security advisories monitored weekly and patches evaluated within 7 days.",
+    "SOC-01": "System targets a 15% improvement in early-stage lung cancer detection rates with quarterly equity monitoring across UK and Sri Lanka patient populations."
+  }
+}
