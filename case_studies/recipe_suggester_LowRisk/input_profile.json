@@ -1,0 +1,335 @@
+{
+  "registry_version": "aigap-v1.0",
+  "sealed": true,
+  "project_id": "proj-recipe-suggester-2026-001",
+  "intake_version": "1.0",
+  "created_at": "2026-06-01T09:00:00+00:00",
+
+  "project_description": "RecipeSuggest is a simple AI-powered recipe suggestion tool built by a volunteer at Nourish Community Kitchen, a small UK-based charity that provides free meals to local residents. Staff type in a list of available ingredients and the tool suggests up to three recipes that can be made with those ingredients. It uses OpenAI GPT-4o via the API. The tool runs on a single tablet in the kitchen and is used only by the two kitchen volunteers during meal preparation. It does not collect any personal data, does not connect to the internet beyond the OpenAI API call, and does not store any conversation history. Outputs are purely informational recipe suggestions that the volunteer may or may not choose to follow. There is no automated decision-making and no impact on any person's rights.",
+
+  "domains": [
+    { "domain": "general_utility_productivity", "weight": 0.0, "is_primary": true }
+  ],
+  "primary_domain": "general_utility_productivity",
+
+  "user_types": ["internal_employees"],
+  "children_minors": false,
+  "vulnerable_adults": false,
+
+  "deployment": "internal_tool",
+  "rights_affecting": false,
+
+  "data_types": [],
+
+  "capability": "descriptive_informational",
+  "human_oversight": "always",
+  "testing_maturity": "pilot",
+
+  "generative_ai": true,
+  "output_modalities": ["text"],
+
+  "testing_stage": "pilot",
+  "persuasion": false,
+  "adaptive_learning": false,
+  "external_deps": true,
+  "certification_expected": false,
+
+  "pre_trained_model": true,
+  "cross_border": "true",
+  "synthetic_data": false,
+
+  "jurisdiction_flags": ["UK_GDPR"],
+
+  "scale": "small",
+  "model_interpretability": "low",
+  "safety_critical": false,
+  "time_sensitive": false,
+
+  "subsystems": ["ADR"],
+  "multi_model": false,
+  "agentic": false,
+
+  "data_retention_capability": "na",
+  "prior_incidents": [],
+
+  "free_text_answers": {},
+
+  "llm_extractions": {
+    "questions_processed": ["Q0"],
+    "extractions": {
+      "Q0": {
+        "extracted_value": "recipe_suggestion_tool",
+        "confidence": 0.99,
+        "method": "auto_mapped",
+        "safety_flags": {
+          "children_minors": false,
+          "vulnerable_adults": false,
+          "has_autonomous_actions": false,
+          "safety_critical": false,
+          "rights_affecting": false
+        }
+      }
+    },
+    "validated_at": "2026-06-01T08:55:00+00:00"
+  },
+
+  "level_assignment": {
+    "raw_score": 18,
+    "max_score": 100,
+    "percentage": 18.0,
+    "assurance_level": "UG",
+    "assurance_grade": "L1",
+    "mandatory_overrides_applied": [],
+    "assigned_at": "2026-06-01T08:58:00+00:00"
+  },
+
+  "active_control_set": [
+    {
+      "control_id": "GOV-01",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Ownership and accountability — named responsible role",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "Who is accountable for RecipeSuggest, what decisions are they responsible for, and how will accountability be maintained across design, deployment, and oversight?"
+    },
+    {
+      "control_id": "GOV-02",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Documented purpose and scope — intended use and limits",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R3"],
+      "allowed_rtypes": ["R1", "R3"],
+      "required_etypes": ["E1"],
+      "base_question": "What is RecipeSuggest's intended purpose, intended users, intended operating context, and explicit boundary of non-use?"
+    },
+    {
+      "control_id": "RISK-01",
+      "domain": "P2",
+      "category": "risk",
+      "title": "System context captured — domain, stakeholders, decision impact, scale",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "What is the system context: domain, stakeholders, scale, decision impact, operating environment, and dependency context?"
+    },
+    {
+      "control_id": "RISK-02",
+      "domain": "P2",
+      "category": "risk",
+      "title": "Risk classification completed — minimal, limited, high, unacceptable",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "How has RecipeSuggest been classified by risk, and what rationale supports that classification?"
+    },
+    {
+      "control_id": "PRIV-01",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data minimization",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R3"],
+      "allowed_rtypes": ["R1", "R3"],
+      "required_etypes": ["E1"],
+      "base_question": "What minimum data is actually necessary for RecipeSuggest to function, and what data will be excluded by design?"
+    },
+    {
+      "control_id": "PRIV-03",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Notice and transparency for data subjects",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R2"],
+      "allowed_rtypes": ["R1", "R2"],
+      "required_etypes": ["E1"],
+      "base_question": "How will affected users be informed about what data is used, why it is used, and how the AI system is involved?"
+    },
+    {
+      "control_id": "PRIV-04",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data retention and deletion",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R3"],
+      "allowed_rtypes": ["R1", "R3"],
+      "required_etypes": ["E1"],
+      "base_question": "What data retention, deletion, and lifecycle rules are planned for inputs, outputs, and related records?"
+    },
+    {
+      "control_id": "FAIR-01",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "Protected groups considered",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "Which protected or vulnerable groups could be affected by RecipeSuggest, and how has that been considered in the design?"
+    },
+    {
+      "control_id": "FAIR-02",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "Bias testing plan — metrics and datasets",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R4"],
+      "allowed_rtypes": ["R1", "R4"],
+      "required_etypes": ["E1"],
+      "base_question": "What bias testing strategy is planned, including target groups, metrics, datasets, and acceptable thresholds?"
+    },
+    {
+      "control_id": "FAIR-07",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "User recourse and appeals",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R2"],
+      "allowed_rtypes": ["R1", "R2"],
+      "required_etypes": ["E1"],
+      "base_question": "If a fairness-related harm affects a person, what appeals or recourse route will exist?"
+    },
+    {
+      "control_id": "TRAN-01",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "User-facing disclosure — AI involvement disclosed",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R2"],
+      "allowed_rtypes": ["R1", "R2"],
+      "required_etypes": ["E1"],
+      "base_question": "How will users be clearly informed that AI is involved in generating recipe suggestions?"
+    },
+    {
+      "control_id": "TRAN-02",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "System limitations stated — known failure modes",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "What known limitations, uncertainty conditions, and failure modes will be communicated to users?"
+    },
+    {
+      "control_id": "TRAN-03",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "Explainability appropriate to context",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R2"],
+      "allowed_rtypes": ["R1", "R2"],
+      "required_etypes": ["E1"],
+      "base_question": "What form of explanation is planned for users, and why is that level of explanation appropriate for RecipeSuggest?"
+    },
+    {
+      "control_id": "TRAN-04",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "Documentation completeness — model card and datasheet",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R3"],
+      "allowed_rtypes": ["R3"],
+      "required_etypes": ["E4"],
+      "base_question": "What documentation set is planned for the model, data, assumptions, and intended or prohibited use?"
+    },
+    {
+      "control_id": "TRAN-07",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "AI identity non-deception",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1", "R2"],
+      "allowed_rtypes": ["R1", "R2"],
+      "required_etypes": ["E1"],
+      "base_question": "If a user asks whether they are interacting with a human or an AI, how will RecipeSuggest respond?"
+    },
+    {
+      "control_id": "SAFE-01",
+      "domain": "P7",
+      "category": "safety",
+      "title": "Safety requirements defined — harm scenarios",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "What harm scenarios have been identified for RecipeSuggest, and what safety requirements are planned to reduce them?"
+    },
+    {
+      "control_id": "DOC-01",
+      "domain": "P9",
+      "category": "documentation",
+      "title": "System description pack complete",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R3"],
+      "allowed_rtypes": ["R3"],
+      "required_etypes": ["E4"],
+      "base_question": "What system description pack is planned, including purpose, users, scope, assumptions, and limitations?"
+    },
+    {
+      "control_id": "ACC-01",
+      "domain": "P10",
+      "category": "accessibility",
+      "title": "Accessibility requirements captured",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "What accessibility requirements are planned, including language, disability access, device constraints, and basic usability?"
+    },
+    {
+      "control_id": "SOC-01",
+      "domain": "P11",
+      "category": "societal",
+      "title": "Intended societal benefit articulated",
+      "level_applicable": ["UG-C", "PG-C", "Cap-C", "Ind-C"],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": ["R1"],
+      "allowed_rtypes": ["R1"],
+      "required_etypes": ["E1"],
+      "base_question": "What societal benefit is RecipeSuggest intended to create, for whom, and how would that benefit be recognised?"
+    }
+  ]
+}
