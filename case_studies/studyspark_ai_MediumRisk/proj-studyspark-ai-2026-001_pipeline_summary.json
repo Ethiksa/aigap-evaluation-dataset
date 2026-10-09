@@ -1,0 +1,44 @@
+{
+  "project_id": "proj-studyspark-ai-2026-001",
+  "run_at": "2026-09-01T16:05:44+00:00",
+  "input_file": "examples/reviewer_test_input.json",
+  "assurance_level": "PG",
+  "assurance_grade": "L1+",
+  "risk_score": 52,
+  "risk_percentage": 52.0,
+  "risk_category": "Medium",
+  "adjusted_risk_category": "Medium",
+  "controls_total": 42,
+  "controls_ready": 0,
+  "controls_partially_ready": 42,
+  "controls_not_ready": 0,
+  "controls_not_applicable": 0,
+  "regulations_triggered": 3,
+  "recommendations_generated": 8,
+  "cost_summary": {
+    "anthropic": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 175831,
+      "output_tokens": 65635,
+      "total_tokens": 241466,
+      "input_cost_usd": 0.527493,
+      "output_cost_usd": 0.984525,
+      "total_cost_usd": 1.512018
+    },
+    "openai": {
+      "model": "text-embedding-3-small",
+      "total_tokens": 2133,
+      "total_cost_usd": 4.3e-05
+    },
+    "grand_total_usd": 1.512061,
+    "pricing_reference": "Prices as of June 2026"
+  },
+  "crp_sealed": true,
+  "output_files": {
+    "crp": "outputs/proj-studyspark-ai-2026-001_crp.json",
+    "crp_feedback": "outputs/proj-studyspark-ai-2026-001_crp_feedback.json",
+    "handoff": "outputs/proj-studyspark-ai-2026-001_handoff.json",
+    "risk_classifier": "outputs/proj-studyspark-ai-2026-001_risk_classifier.json",
+    "pipeline_summary": "outputs/proj-studyspark-ai-2026-001_pipeline_summary.json"
+  }
+}

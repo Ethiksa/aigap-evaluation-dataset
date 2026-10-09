@@ -1,0 +1,486 @@
+{
+  "summary": {
+    "project_id": "proj-studyspark-ai-2026-001",
+    "timestamp": "2026-09-01T16:05:01+00:00",
+    "risk_model_version": "aigap-v1.0",
+    "risk_category": "Medium",
+    "adjusted_risk_category": "Medium",
+    "assurance_level": "PG",
+    "assurance_grade": "L1+",
+    "review_status": "COMPLETE",
+    "confidence_score": 0.9
+  },
+  "risk_overview": {
+    "raw_score": 52,
+    "risk_percentage": 52.0,
+    "adjusted_risk_percentage": 56.29,
+    "reviewer_gap_score": 48.0,
+    "primary_risk_drivers": [
+      {
+        "factor": "generative_ai",
+        "value": true,
+        "risk_contribution": "High",
+        "rationale": "Generative AI produces novel outputs that cannot be fully pre-tested, with increased risk of harmful, misleading, or biased content."
+      },
+      {
+        "factor": "pre_trained_model",
+        "value": true,
+        "risk_contribution": "Medium",
+        "rationale": "External foundation model introduces supply chain risk \u2014 provenance, known biases, and security must be independently verified."
+      }
+    ]
+  },
+  "regulatory_context": {
+    "triggered_regulations": [
+      {
+        "regulation_id": "7",
+        "name": "Regulation #7",
+        "regulation_title": "Regulation #7",
+        "triggering_factors": [
+          "fairness_risk"
+        ],
+        "triggering_sentence": "SOURCE: Nist.Ai.100 1 | 3.6 Privacy-Enhanced\nSECTION: 3.6 Privacy-Enhanced\nTOPIC: The definition of privacy in AI, the values that should guide AI system design, and how privacy-enhancing technologies and data minimization methods can mitigate privacy-related risks and tradeoffs.\n---\nPrivacy refers generally to the norms and practices that help to safeguard human autonomy, identity, and dignity. These norms and practices typically address freedom from intrusion, limiting observation, or individuals\u2019 agency to consent to disclosure or control of facets of their identities (e.g., body, data, reputation). (See The NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management.)\n\nPrivacy values such as anonymity, confidentiality, and control generally should guide choices for AI system design, development, and deployment. Privacy-related risks may influence security, bias, and transparency and come with tradeoffs with these other characteristics. Like safety and security, specific technical features of an AI system may promote or reduce privacy. AI systems can also present new risks to privacy by allowing inference to identify individuals or previously private information about individuals.\n\nPrivacy-enhancing technologies (\u201cPETs\u201d) for AI, as well as data minimizing methods such as de-identification and aggregation for certain model outputs, can support design for privacy-enhanced AI systems. Under certain conditions such as data sparsity, privacy-enhancing techniques can result in a loss in accuracy, affecting decisions about fairness and other values in certain domains.",
+        "similarity_score": 0.3814,
+        "risk_level": "Low",
+        "reason": "This AI system processes personal identifiable information (PII) as a general utility/productivity assistant, which directly triggers the privacy-related considerations outlined in NIST AI 100-1 Section 3.6, as such data types carry inherent risks of inference, unauthorized disclosure, or identity exposure that must be mitigated through privacy-enhancing technologies (PETs) and data minimization methods. The regulation's guidance on embedding privacy values \u2014 such as anonymity, confidentiality, and individual control \u2014 into AI system design is particularly relevant here, as the assistive capability of this system means it likely interacts closely with user-provided personal data, making it essential to apply safeguards like de-identification and aggregation to reduce privacy-related risks and tradeoffs."
+      },
+      {
+        "regulation_id": "4",
+        "name": "Regulation #4",
+        "regulation_title": "Regulation #4",
+        "triggering_factors": [
+          "healthcare_domain",
+          "rights_affecting"
+        ],
+        "triggering_sentence": "SOURCE: Blueprint for an AI Bill of Rights | Section 8.2\r\nTitle: Examples: Systems with Privacy Impact\r\n\r\nSystems with a potential privacy impact such as smart home systems and associated data, systems that use or collect health-related data, systems that use or collect education-related data, criminal justice system data, ad-targeting systems, and systems that perform big data analytics in order to build profiles or infer personal information about individuals. Any system that has the meaningful potential to lead to algorithmic discrimination should also be considered.",
+        "similarity_score": 0.3548,
+        "risk_level": "Low",
+        "reason": "The AI system in question handles personal identifiable information (PII), which places it squarely within the category of systems with a meaningful potential privacy impact as described in Section 8.2 of the Blueprint for an AI Bill of Rights, alongside examples such as ad-targeting systems and big data analytics platforms that collect or infer personal information about individuals. Because the system processes PII in a general utility and productivity context, it carries an inherent risk of privacy exposure or misuse of sensitive personal data, which is precisely the type of concern that Regulation #4 is designed to address."
+      },
+      {
+        "regulation_id": "6",
+        "name": "Regulation #6",
+        "regulation_title": "Regulation #6",
+        "triggering_factors": [
+          "healthcare_domain"
+        ],
+        "triggering_sentence": "SOURCE: Ethics and Governance of Artificial Intelligence for Health: WHO Guidance | Section 14.1\r\nTitle: Applications: Clerical Functions and Administrative Tasks\r\n\r\nLMMs are being used to assist health professionals in clerical, administrative and financial aspects of practising medicine. Medicine exposes physicians and other health-care professionals to ever-growing paperwork for numerous obligations for recording patient information and data in electronic health records, billing and other administrative tasks. Documentation constituted one fourth to one half of doctor's time and one fifth of nurse's time. LMMs have been singled out as means of returning time to health-care professionals to reduce burn-out and allocate more time to providing care. Examples of uses include better communication to assist in translation, to fill in missing information in electronic health records, and to draft clinical notes after each patient visit. However, serious errors could arise due to inaccuracies, mistakes or hallucinations. LMMs can be inconsistent with slight changes to prompt generating completely different electronic health record.",
+        "similarity_score": 0.3471,
+        "risk_level": "Low",
+        "reason": "This regulation applies because the AI system handles personal identifiable information (PII) in an assistive capacity within general utility and productivity domains, mirroring the WHO guidance's concern about LMMs processing sensitive patient data for administrative tasks such as filling in electronic health records and drafting clinical notes, where inaccuracies or hallucinations could lead to serious errors. The assistive nature of the system \u2014 designed to reduce documentation burden and improve efficiency \u2014 directly aligns with the regulation's focus on ensuring that AI tools supporting clerical and administrative functions maintain accuracy and consistency, given that even slight prompt variations can produce significantly different outputs when handling personal data."
+      }
+    ]
+  },
+  "control_requirements": {
+    "required_controls": [
+      {
+        "control": "ACC-05",
+        "description": "Protections for vulnerable groups implemented \u2014 minors and marginalized groups",
+        "priority": "High",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-02",
+        "description": "Bias testing plan \u2014 metrics and datasets",
+        "priority": "High",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-10",
+        "description": "Regulatory compliance mapping",
+        "priority": "High",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-01",
+        "description": "Oversight roles defined and trained",
+        "priority": "High",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-02",
+        "description": "Human intervention points defined \u2014 override, review, escalation",
+        "priority": "High",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-03",
+        "description": "Notice and transparency for data subjects",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-04",
+        "description": "Data retention and deletion",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-06",
+        "description": "Data provenance and rights",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-04",
+        "description": "Fallback behavior \u2014 safe failure modes",
+        "priority": "High",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-08",
+        "description": "Equity of access considered \u2014 who is excluded by cost, language, availability",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-04",
+        "description": "Documentation completeness \u2014 model card and datasheet",
+        "priority": "High",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-05",
+        "description": "Logging for accountability \u2014 inputs and outputs where appropriate",
+        "priority": "High",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-01",
+        "description": "Accessibility requirements captured \u2014 language, disability access, device constraints",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-03",
+        "description": "Human factors hazards assessed \u2014 automation bias, over-trust, workflow harms",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-07",
+        "description": "Harmful UX patterns avoided \u2014 dark patterns, coercive consent, confusing disclosures",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-01",
+        "description": "System description pack complete \u2014 purpose, scope, users, limitations",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-01",
+        "description": "Protected groups considered",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-07",
+        "description": "User recourse and appeals \u2014 especially for high-impact decisions",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-01",
+        "description": "Ownership and accountability \u2014 named responsible role",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-02",
+        "description": "Documented purpose and scope \u2014 intended use and limits",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-03",
+        "description": "Stakeholder impact assessment \u2014 who can be harmed and how",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-04",
+        "description": "Risk assessment performed \u2014 initial and periodic",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-05",
+        "description": "Human oversight plan \u2014 when and how humans intervene",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-06",
+        "description": "Incident response and escalation \u2014 including harmful outputs",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-03",
+        "description": "User recourse process defined \u2014 appeal and complaint",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-04",
+        "description": "Safe fallback behaviors implemented",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-01",
+        "description": "Data minimization",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-02",
+        "description": "Lawful basis and consent clarity",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-05",
+        "description": "Access control and least privilege",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-01",
+        "description": "System context captured \u2014 domain, stakeholders, decision impact, scale",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-02",
+        "description": "Risk classification completed \u2014 minimal, limited, high, unacceptable",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-03",
+        "description": "Ethical impact assessment \u2014 completed ex-ante",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-04",
+        "description": "Residual risk accepted by accountable owner \u2014 sign-off",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-01",
+        "description": "Safety requirements defined \u2014 harm scenarios",
+        "priority": "Medium",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-01",
+        "description": "Threat model \u2014 including misuse and abuse",
+        "priority": "Medium",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-03",
+        "description": "Secure SDLC \u2014 dependencies, secrets, reviews",
+        "priority": "Medium",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-06",
+        "description": "Pre-trained model supply chain \u2014 provenance, licensing, safety",
+        "priority": "Medium",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-01",
+        "description": "Intended societal benefit articulated \u2014 who benefits and how measured",
+        "priority": "Medium",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-01",
+        "description": "User-facing disclosure \u2014 AI involvement disclosed",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-02",
+        "description": "System limitations stated \u2014 known failure modes",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-03",
+        "description": "Explainability appropriate to context \u2014 technical and user",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-07",
+        "description": "AI identity non-deception",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "Establish a Generative AI Output Monitoring and Auditing Framework",
+      "why": "Generative AI is a top risk driver and can produce harmful, misleading, or biased outputs at scale. Regulation #7 requires ongoing oversight of AI system behaviour. A structured monitoring framework ensures outputs are continuously reviewed for quality, safety, and alignment with intended use in the general utility/productivity domain.",
+      "urgency": "Critical",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E5"
+      ]
+    },
+    {
+      "action": "Conduct a Pre-Trained Model Provenance and Supply Chain Assessment",
+      "why": "The use of a pre-trained model introduces inherited risks including unknown training data biases, undisclosed capabilities, and potential intellectual property concerns. Regulation #4 mandates transparency and accountability for AI components. Documenting the model's origin, training data lineage, and any known limitations is essential before deployment.",
+      "urgency": "Critical",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E1",
+        "E3",
+        "E6"
+      ]
+    },
+    {
+      "action": "Implement a Bias and Fairness Evaluation Protocol for Generative Outputs",
+      "why": "Generative AI systems are susceptible to producing outputs that reflect or amplify biases present in pre-trained model weights. Regulation #6 requires demonstrable fairness and non-discrimination measures. A structured evaluation protocol with documented test cases and results must be in place prior to and during operation.",
+      "urgency": "High",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E2",
+        "E4",
+        "E5"
+      ]
+    },
+    {
+      "action": "Define and Enforce Acceptable Use Boundaries and Content Filtering Controls",
+      "why": "In the general utility/productivity domain, generative AI may be prompted to produce content outside its intended scope. Regulation #7 and Regulation #4 require that AI systems operate within defined boundaries. Input/output filtering and use-case scoping controls must be implemented and tested.",
+      "urgency": "High",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E7"
+      ]
+    },
+    {
+      "action": "Produce and Maintain a Model Card and System Transparency Documentation",
+      "why": "Regulation #4 requires transparency about AI system capabilities, limitations, and intended use. A model card for the pre-trained model and a system-level transparency document must be produced, kept current, and made available to relevant stakeholders and the certifying authority.",
+      "urgency": "High",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E1",
+        "E3",
+        "E6"
+      ]
+    },
+    {
+      "action": "Establish a Human-in-the-Loop Review Mechanism for High-Stakes Outputs",
+      "why": "Generative AI at assurance level PG requires proportionate human oversight. Regulation #6 and Regulation #7 emphasise meaningful human control over consequential AI decisions. A defined escalation and review pathway for outputs flagged as sensitive or high-impact must be documented and operationalised.",
+      "urgency": "High",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E2",
+        "E5",
+        "E8"
+      ]
+    },
+    {
+      "action": "Perform Adversarial Robustness and Prompt Injection Testing",
+      "why": "Pre-trained generative models are known to be vulnerable to adversarial prompting and prompt injection attacks that can bypass intended behaviour. Regulation #7 requires security and robustness assurance. Structured red-team and adversarial testing must be conducted and results documented before and after deployment.",
+      "urgency": "Medium",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E2",
+        "E4",
+        "E9"
+      ]
+    },
+    {
+      "action": "Implement a User Disclosure and Consent Mechanism for AI-Generated Content",
+      "why": "Regulation #4 and Regulation #6 require that users are informed when they are interacting with or receiving outputs from an AI system. In the general utility/productivity domain, users must be clearly notified that content is AI-generated, and where applicable, consent mechanisms must be in place and evidenced.",
+      "urgency": "Medium",
+      "linked_controls": [],
+      "certifier_evidence_required": [
+        "E1",
+        "E6",
+        "E8"
+      ]
+    }
+  ],
+  "pii_findings": {
+    "detected": true,
+    "types": [
+      "personal_identifiable_information"
+    ],
+    "special_category_confirmed": false,
+    "gdpr_article_9_applies": false,
+    "children_data_confirmed": false
+  },
+  "audit_trail": {
+    "scoring_engine_version": "aigap-v1.0",
+    "registry_version": "aigap-v1.0",
+    "crp_id": "1ade4801-700b-4fbf-b79b-ce5d1afb575b",
+    "raw_risk_score": 52,
+    "adjusted_risk_score": 56.29,
+    "reviewer_gap_score": 48.0,
+    "controls_active": 42,
+    "controls_ready": 0,
+    "controls_partially_ready": 42,
+    "controls_not_ready": 0,
+    "vector_db_queries": 1,
+    "regulation_hits_returned": 10,
+    "classifier_run_at": "2026-09-01T16:05:01+00:00"
+  }
+}
