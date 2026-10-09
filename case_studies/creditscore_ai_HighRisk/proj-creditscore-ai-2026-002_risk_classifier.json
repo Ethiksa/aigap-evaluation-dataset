@@ -1,0 +1,739 @@
+{
+  "summary": {
+    "project_id": "proj-creditscore-ai-2026-002",
+    "timestamp": "2026-10-08T14:22:29+00:00",
+    "risk_model_version": "aigap-v1.0",
+    "risk_category": "Medium",
+    "adjusted_risk_category": "Medium",
+    "assurance_level": "Capstone",
+    "assurance_grade": "L2",
+    "review_status": "COMPLETE",
+    "confidence_score": 0.89
+  },
+  "risk_overview": {
+    "raw_score": 62,
+    "risk_percentage": 62.0,
+    "adjusted_risk_percentage": 66.93,
+    "reviewer_gap_score": 100.0,
+    "primary_risk_drivers": [
+      {
+        "factor": "rights_affecting",
+        "value": true,
+        "risk_contribution": "Critical",
+        "rationale": "System makes or influences rights-affecting decisions, triggering mandatory Capstone minimum and full governance control activation."
+      },
+      {
+        "factor": "cross_border_deployment",
+        "value": true,
+        "risk_contribution": "Medium",
+        "rationale": "Cross-border deployment creates multi-jurisdiction compliance obligations that may conflict or require separate legal mechanisms."
+      }
+    ]
+  },
+  "regulatory_context": {
+    "triggered_regulations": [
+      {
+        "regulation_id": "5",
+        "name": "Regulation #5",
+        "regulation_title": "Regulation #5",
+        "triggering_factors": [
+          "rights_affecting"
+        ],
+        "triggering_sentence": "SOURCE: A pro-innovation approach to AI regulation (UK) | Section 5.1.13\r\nTitle: Societal Harms: Data Protection Law Reform for AI\r\n\r\nData is foundation for modelling, training, and developing AI systems. It is critical to respect relevant individual rights and data protection principles should be complied with when processing personal data in AI systems. The UK's data protection framework, being reformed through Data Protection and Digital Information Bill (DPDI), will complement pro-innovation, proportionate, and context-based approach to regulating AI. Current rules on automated decision-making are confusing and complex, undermining confidence to develop and use innovative technologies. The DPDI Bill will expand lawful bases on which solely automated decisions that have significant effects on individuals can take place and provide boost in confidence to organizations looking to use technologies responsibly. It will continue to ensure data subject rights are protected with safeguards in place, including providing information on decisions, opportunity to make representations, and ability to request human intervention or contest decisions.",
+        "similarity_score": 0.4878,
+        "risk_level": "Low",
+        "reason": "This AI system operates in the financial services domain using predictive analytical capabilities that process personal identifiable information and financial data, directly triggering data protection obligations under UK_GDPR and EU_GDPR, as the regulation emphasizes that data protection principles must be respected when processing personal data in AI systems. Furthermore, because the system is rights-affecting and flagged under the EU_AI_ACT alongside UK and EU GDPR jurisdictions, it falls squarely within the scope of Regulation #5's focus on automated decision-making that has significant effects on individuals, necessitating safeguards such as transparency about decisions, the ability to make representations, and the option to request human intervention as outlined in the DPDI reform context."
+      },
+      {
+        "regulation_id": "1",
+        "name": "Regulation #1",
+        "regulation_title": "Regulation #1",
+        "triggering_factors": [
+          "financial_services"
+        ],
+        "triggering_sentence": "SOURCE: EU AI Act | Article 24\r\nTITLE: Data governance\r\n\r\nProviders and users of high-risk AI systems shall implement measures for the governance of training and test data. Data shall be kept in a secure manner and documented. Procedures for data quality assurance shall be established.",
+        "similarity_score": 0.4834,
+        "risk_level": "Low",
+        "reason": "This AI system operates in the financial services domain with predictive analytical capabilities, processing sensitive financial data and personally identifiable information while directly affecting individuals' rights \u2014 characteristics that place it squarely within the scope of high-risk AI systems addressed by the EU AI Act's data governance requirements under Article 24. As a result, the providers and users of this system are expected to implement robust data governance measures, including secure data storage, thorough documentation, and established data quality assurance procedures for all training and test data used by the system."
+      }
+    ]
+  },
+  "control_requirements": {
+    "required_controls": [
+      {
+        "control": "ACC-06",
+        "description": "Human alternatives available for consequential outcomes",
+        "priority": "Critical",
+        "source": "P10",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "SEC-02",
+        "description": "Prompt injection and data exfiltration defenses \u2014 for LLM tools",
+        "priority": "Critical",
+        "source": "P8",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "SOC-05",
+        "description": "Workforce and labor impacts considered \u2014 displacement, unfair monitoring, safety",
+        "priority": "Critical",
+        "source": "P11",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "ACC-02",
+        "description": "Inclusive design testing performed with representative users",
+        "priority": "High",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-03",
+        "description": "Human factors hazards assessed \u2014 automation bias, over-trust, workflow harms",
+        "priority": "High",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-05",
+        "description": "Protections for vulnerable groups implemented \u2014 minors and marginalized groups",
+        "priority": "High",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-07",
+        "description": "Harmful UX patterns avoided \u2014 dark patterns, coercive consent, confusing disclosures",
+        "priority": "High",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-02",
+        "description": "Dataset documentation complete \u2014 datasheet, provenance, licenses",
+        "priority": "High",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-03",
+        "description": "Model documentation complete \u2014 model card, eval, intended and forbidden use",
+        "priority": "High",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-01",
+        "description": "Protected groups considered",
+        "priority": "High",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-02",
+        "description": "Bias testing plan \u2014 metrics and datasets",
+        "priority": "High",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-03",
+        "description": "Bias testing executed \u2014 results and interpretation",
+        "priority": "High",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-06",
+        "description": "Incident response and escalation \u2014 including harmful outputs",
+        "priority": "High",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-10",
+        "description": "Regulatory compliance mapping",
+        "priority": "High",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-01",
+        "description": "Oversight roles defined and trained",
+        "priority": "High",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-03",
+        "description": "User recourse process defined \u2014 appeal and complaint",
+        "priority": "High",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-02",
+        "description": "Lawful basis and consent clarity",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-03",
+        "description": "Notice and transparency for data subjects",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-04",
+        "description": "Data retention and deletion",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-06",
+        "description": "Data provenance and rights",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-09",
+        "description": "Synthetic data governance",
+        "priority": "High",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-02",
+        "description": "Testing against edge cases \u2014 stress tests",
+        "priority": "High",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-05",
+        "description": "Red-teaming performed \u2014 scaled to risk",
+        "priority": "High",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-06",
+        "description": "Post-deployment harm monitoring \u2014 signals and thresholds",
+        "priority": "High",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-01",
+        "description": "Threat model \u2014 including misuse and abuse",
+        "priority": "High",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-03",
+        "description": "Secure SDLC \u2014 dependencies, secrets, reviews",
+        "priority": "High",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-02",
+        "description": "Potential societal harms identified \u2014 misinformation, exclusion, polarization, surveillance",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-03",
+        "description": "Environmental impact estimated \u2014 compute and energy mitigations considered",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-04",
+        "description": "Cultural and contextual appropriateness assessed \u2014 language, norms, local harms",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-06",
+        "description": "Dual-use and misuse potential assessed \u2014 repurposing for harm",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-07",
+        "description": "Public interest disclosures \u2014 if public-facing, what is disclosed and how to report harm",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-08",
+        "description": "Equity of access considered \u2014 who is excluded by cost, language, availability",
+        "priority": "High",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-04",
+        "description": "Documentation completeness \u2014 model card and datasheet",
+        "priority": "High",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-01",
+        "description": "Accessibility requirements captured \u2014 language, disability access, device constraints",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-04",
+        "description": "User comprehension validated \u2014 notices and explanations are understandable",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-08",
+        "description": "Support and grievance channels usable and accessible",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-01",
+        "description": "System description pack complete \u2014 purpose, scope, users, limitations",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-04",
+        "description": "Decision traceability maintained \u2014 ability to reconstruct key outputs and inputs",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-05",
+        "description": "Version lineage maintained \u2014 data, model, code versions linked",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-06",
+        "description": "Evidence retention policy defined \u2014 what evidence, how long, access controls",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "FAIR-04",
+        "description": "Mitigation actions documented \u2014 tradeoffs explained",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-05",
+        "description": "Performance parity thresholds defined and justified",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-06",
+        "description": "Ongoing fairness monitoring \u2014 drift and subgroup checks",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-07",
+        "description": "User recourse and appeals \u2014 especially for high-impact decisions",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-01",
+        "description": "Ownership and accountability \u2014 named responsible role",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-02",
+        "description": "Documented purpose and scope \u2014 intended use and limits",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-03",
+        "description": "Stakeholder impact assessment \u2014 who can be harmed and how",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-04",
+        "description": "Risk assessment performed \u2014 initial and periodic",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-05",
+        "description": "Human oversight plan \u2014 when and how humans intervene",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-07",
+        "description": "Monitoring and review cadence \u2014 post-deployment monitoring",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-09",
+        "description": "Re-evaluation trigger obligation",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-02",
+        "description": "Human intervention points defined \u2014 override, review, escalation",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-04",
+        "description": "Safe fallback behaviors implemented",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-05",
+        "description": "User support and dispute timelines defined \u2014 response SLAs",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "HUMO-07",
+        "description": "Prohibition on fully automated consequential decisions",
+        "priority": "Medium",
+        "source": "P3",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-01",
+        "description": "Data minimization",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-05",
+        "description": "Access control and least privilege",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-07",
+        "description": "Cross-border transfer assessment \u2014 if applicable",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-08",
+        "description": "De-identification and anonymization evaluation \u2014 if claimed",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Ready"
+      },
+      {
+        "control": "RISK-01",
+        "description": "System context captured \u2014 domain, stakeholders, decision impact, scale",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-02",
+        "description": "Risk classification completed \u2014 minimal, limited, high, unacceptable",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-03",
+        "description": "Ethical impact assessment \u2014 completed ex-ante",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-04",
+        "description": "Residual risk accepted by accountable owner \u2014 sign-off",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-06",
+        "description": "Reassessment triggers defined \u2014 model, data change, new users, incidents",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-01",
+        "description": "Safety requirements defined \u2014 harm scenarios",
+        "priority": "Medium",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-03",
+        "description": "Robustness to distribution shift \u2014 where relevant",
+        "priority": "Medium",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-04",
+        "description": "Fallback behavior \u2014 safe failure modes",
+        "priority": "Medium",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-05",
+        "description": "Vulnerability management \u2014 patching and disclosure process",
+        "priority": "Medium",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SEC-06",
+        "description": "Pre-trained model supply chain \u2014 provenance, licensing, safety",
+        "priority": "Medium",
+        "source": "P8",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-01",
+        "description": "Intended societal benefit articulated \u2014 who benefits and how measured",
+        "priority": "Medium",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-01",
+        "description": "User-facing disclosure \u2014 AI involvement disclosed",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-02",
+        "description": "System limitations stated \u2014 known failure modes",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-03",
+        "description": "Explainability appropriate to context \u2014 technical and user",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-05",
+        "description": "Logging for accountability \u2014 inputs and outputs where appropriate",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-07",
+        "description": "AI identity non-deception",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-08",
+        "description": "Content provenance marking for generative outputs",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "Establish a genuine, fully human decision pathway for consequential credit outcomes that operates entirely independently of the AI-generated score, including a documented override mechanism, escalation path, and appeals process for applicants who dispute AI-informed decisions.",
+      "why": "The rights_affecting risk driver and Regulation #5 require that individuals subject to consequential automated decisions have access to a meaningful human alternative. The current branch process still relies on the AI credit score, meaning no genuine human alternative exists. This is a foundational rights protection gap at Capstone assurance level in the financial_services domain.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "ACC-06"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3",
+        "E7"
+      ]
+    },
+    {
+      "action": "Conduct and document a full threat model and risk assessment for prompt injection and indirect injection vectors across all upstream data pipelines and third-party integrations (e.g., Experian feeds), and implement corresponding defenses including output filtering, data loss prevention controls, and adversarial input integrity checks.",
+      "why": "The cross_border_deployment risk driver and Regulation #1 require robust cybersecurity controls for AI systems operating across jurisdictions. The current 'not applicable' determination for prompt injection is insufficiently justified and no threat model substantiates it. Indirect injection via structured external data feeds remains an unmitigated risk, and the absence of DLP or monitoring controls creates material data exfiltration exposure.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "SEC-02"
+      ],
+      "certifier_evidence_required": [
+        "E2",
+        "E4",
+        "E5",
+        "E6"
+      ]
+    },
+    {
+      "action": "Immediately produce and submit all required documentation for DOC-06, including policy documents, implementation evidence, and operational records sufficient to demonstrate control adequacy. An adequacy score of 0 indicates a complete documentation absence that must be remediated before any assurance progression.",
+      "why": "At Capstone assurance level, documentation completeness is a prerequisite for all other control validations. Regulation #5 and Regulation #1 both require demonstrable evidence of governance processes. A score of 0 with no gaps listed suggests the control was not engaged with at all, which is incompatible with Capstone-level assurance in a rights_affecting financial_services context.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "DOC-06"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "action": "Define and publish timeliness standards and SLAs for the human-mediated review process, and establish public disclosure reporting on human governance outcomes and effectiveness as required under the applicable AI rights framework.",
+      "why": "Regulation #5 explicitly requires transparency and public reporting on human oversight processes for rights-affecting AI systems. The absence of SLAs and public disclosure means applicants and regulators cannot assess whether the human alternative is operationally meaningful, undermining accountability at Capstone assurance level.",
+      "urgency": "High",
+      "linked_controls": [
+        "ACC-06"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E3",
+        "E7",
+        "E9"
+      ]
+    },
+    {
+      "action": "Develop and implement mandatory training requirements for loan officers on interpreting and explaining AI outputs, and introduce accessibility provisions for individuals with disabilities or other barriers to ensure equitable access to the human review pathway.",
+      "why": "The rights_affecting risk driver requires that human oversight mechanisms are genuinely accessible and effective for all applicants. Untrained loan officers cannot provide meaningful human review, and the absence of accessibility provisions creates discriminatory barriers, both of which are inconsistent with Regulation #5 obligations in a financial_services context.",
+      "urgency": "High",
+      "linked_controls": [
+        "ACC-06"
+      ],
+      "certifier_evidence_required": [
+        "E2",
+        "E3",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "action": "Conduct a bias testing assessment of training data and implement documented bias mitigation measures, including assigned responsibilities and a defined review cadence for ongoing monitoring of disparate impact across protected characteristics.",
+      "why": "Regulation #1 requires bias monitoring and mitigation for AI systems in high-risk domains. The SOC-05 gap reveals no bias testing or mitigation has been documented, and no ongoing monitoring responsibilities are assigned. In a financial_services credit-scoring context with cross_border_deployment, undetected bias creates significant regulatory and rights-affecting exposure.",
+      "urgency": "High",
+      "linked_controls": [
+        "SOC-05"
+      ],
+      "certifier_evidence_required": [
+        "E2",
+        "E4",
+        "E5",
+        "E6",
+        "E9"
+      ]
+    },
+    {
+      "action": "Implement monitoring, alerting, and incident response procedures specifically covering prompt injection and data exfiltration scenarios within the AI system's operational environment, and attach implementation evidence and testing records to SEC-02.",
+      "why": "The cross_border_deployment risk driver amplifies cybersecurity obligations under Regulation #1, as incidents may span multiple jurisdictions with differing notification requirements. The current SEC-02 submission contains no monitoring, alerting, or incident response documentation, leaving the system without a defined response posture for known AI-specific attack vectors.",
+      "urgency": "High",
+      "linked_controls": [
+        "SEC-02"
+      ],
+      "certifier_evidence_required": [
+        "E4",
+        "E5",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "action": "Establish a workforce impact governance framework that includes worker notification and transparency regarding AI-assisted decisions affecting roles or performance, a longer-term displacement risk analysis, and a scheduled reassessment cadence with clearly assigned responsibilities.",
+      "why": "Regulation #1 and the rights_affecting risk driver require that AI systems do not create unfair or opaque impacts on workers. The SOC-05 gaps show no worker notification, no long-term displacement analysis, and no assigned accountability for ongoing monitoring. At Capstone assurance level, these omissions represent a material governance deficit in a cross_border_deployment context where workforce regulations may vary by jurisdiction.",
+      "urgency": "Medium",
+      "linked_controls": [
+        "SOC-05"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3",
+        "E7",
+        "E9"
+      ]
+    }
+  ],
+  "pii_findings": {
+    "detected": true,
+    "types": [
+      "financial_data",
+      "personal_identifiable_information"
+    ],
+    "special_category_confirmed": false,
+    "gdpr_article_9_applies": false,
+    "children_data_confirmed": false
+  },
+  "audit_trail": {
+    "scoring_engine_version": "aigap-v1.0",
+    "registry_version": "aigap-v1.0",
+    "crp_id": "249cea3a-18bc-4632-a596-61b75a6d5855",
+    "raw_risk_score": 62,
+    "adjusted_risk_score": 66.93,
+    "reviewer_gap_score": 100.0,
+    "controls_active": 76,
+    "controls_ready": 1,
+    "controls_partially_ready": 71,
+    "controls_not_ready": 4,
+    "vector_db_queries": 1,
+    "regulation_hits_returned": 10,
+    "classifier_run_at": "2026-10-08T14:22:29+00:00"
+  }
+}

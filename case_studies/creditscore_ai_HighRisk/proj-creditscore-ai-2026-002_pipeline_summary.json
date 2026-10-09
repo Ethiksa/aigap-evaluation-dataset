@@ -1,0 +1,44 @@
+{
+  "project_id": "proj-creditscore-ai-2026-002",
+  "run_at": "2026-10-08T14:23:15+00:00",
+  "input_file": "examples/reviewer_test_input.json",
+  "assurance_level": "Capstone",
+  "assurance_grade": "L2",
+  "risk_score": 62,
+  "risk_percentage": 62.0,
+  "risk_category": "Medium",
+  "adjusted_risk_category": "Medium",
+  "controls_total": 76,
+  "controls_ready": 1,
+  "controls_partially_ready": 71,
+  "controls_not_ready": 4,
+  "controls_not_applicable": 0,
+  "regulations_triggered": 2,
+  "recommendations_generated": 8,
+  "cost_summary": {
+    "anthropic": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 304344,
+      "output_tokens": 124551,
+      "total_tokens": 428895,
+      "input_cost_usd": 0.913032,
+      "output_cost_usd": 1.868265,
+      "total_cost_usd": 2.781297
+    },
+    "openai": {
+      "model": "text-embedding-3-small",
+      "total_tokens": 3978,
+      "total_cost_usd": 8e-05
+    },
+    "grand_total_usd": 2.781377,
+    "pricing_reference": "Prices as of June 2026"
+  },
+  "crp_sealed": true,
+  "output_files": {
+    "crp": "outputs/proj-creditscore-ai-2026-002_crp.json",
+    "crp_feedback": "outputs/proj-creditscore-ai-2026-002_crp_feedback.json",
+    "handoff": "outputs/proj-creditscore-ai-2026-002_handoff.json",
+    "risk_classifier": "outputs/proj-creditscore-ai-2026-002_risk_classifier.json",
+    "pipeline_summary": "outputs/proj-creditscore-ai-2026-002_pipeline_summary.json"
+  }
+}
