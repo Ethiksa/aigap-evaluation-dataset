@@ -1,0 +1,11 @@
+{
+  "control_id": "GOV-01",
+  "round": 5,
+  "suggested_status": "Partially_Ready",
+  "gaps": [
+    "Full copies of the two governance documents are not included as separate attached files, despite being reproduced in full within the submission text",
+    "No independent confirmation exists that a separately cross-referenced register entry (the Azure Service Register) is consistent with the submission",
+    "Review-cadence entry reported by evaluator as appearing truncated mid-reference. NOTE: this claim was independently verified against the submitted document and found to be FALSE — the referenced text was present in full with no truncation. Documented as a hallucination finding, not a genuine gap."
+  ],
+  "note": "This round is the key empirical evidence for the paper's hallucination finding. See SUMMARY.md."
+}

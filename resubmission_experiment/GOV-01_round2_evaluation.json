@@ -1,0 +1,10 @@
+{
+  "control_id": "GOV-01",
+  "round": 2,
+  "suggested_status": "Partially_Ready",
+  "gaps": [
+    "No explicit mention of how accountability ownership is communicated externally (e.g., to students or other university stakeholders who interact with the system)",
+    "The scope of the owner's accountability over 'content quality' is stated but no process is described for how content quality is actually monitored or assured between scheduled reviews",
+    "No reference to a formal role profile or terms of reference document that codifies the accountable owner's duties independently of this governance document"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "control_id": "GOV-01",
+  "round": 4,
+  "suggested_status": "Partially_Ready",
+  "gaps": [
+    "Full copies of the two referenced governance documents are not included in the submission — only verbatim extracts are provided, with full documents held externally",
+    "No explicit confirmation that the named tertiary fallback accountability holder has formally accepted that role",
+    "A referenced weekly peer-review mechanism is described but not evidenced with a concrete schedule or named participants"
+  ]
+}
