@@ -1,0 +1,334 @@
+{
+  "summary": {
+    "project_id": "proj-recipe-suggester-2026-001",
+    "timestamp": "2026-09-02T06:04:58+00:00",
+    "risk_model_version": "aigap-v1.0",
+    "risk_category": "Minimal",
+    "adjusted_risk_category": "Minimal",
+    "assurance_level": "UG",
+    "assurance_grade": "L1",
+    "review_status": "COMPLETE",
+    "confidence_score": 0.85
+  },
+  "risk_overview": {
+    "raw_score": 18,
+    "risk_percentage": 18.0,
+    "adjusted_risk_percentage": 22.64,
+    "reviewer_gap_score": 23.5,
+    "primary_risk_drivers": [
+      {
+        "factor": "generative_ai",
+        "value": true,
+        "risk_contribution": "High",
+        "rationale": "Generative AI produces novel outputs that cannot be fully pre-tested, with increased risk of harmful, misleading, or biased content."
+      },
+      {
+        "factor": "low_model_interpretability",
+        "value": "low",
+        "risk_contribution": "High",
+        "rationale": "Low model interpretability limits human oversight effectiveness and may not satisfy EU AI Act Article 13 explainability requirements."
+      },
+      {
+        "factor": "cross_border_deployment",
+        "value": true,
+        "risk_contribution": "Medium",
+        "rationale": "Cross-border deployment creates multi-jurisdiction compliance obligations that may conflict or require separate legal mechanisms."
+      },
+      {
+        "factor": "pre_trained_model",
+        "value": true,
+        "risk_contribution": "Medium",
+        "rationale": "External foundation model introduces supply chain risk \u2014 provenance, known biases, and security must be independently verified."
+      }
+    ]
+  },
+  "regulatory_context": {
+    "triggered_regulations": [
+      {
+        "regulation_id": "5",
+        "name": "Regulation #5",
+        "regulation_title": "Regulation #5",
+        "triggering_factors": [
+          "rights_affecting"
+        ],
+        "triggering_sentence": "SOURCE: A pro-innovation approach to AI regulation (UK) | Section 5.1.13\r\nTitle: Societal Harms: Data Protection Law Reform for AI\r\n\r\nData is foundation for modelling, training, and developing AI systems. It is critical to respect relevant individual rights and data protection principles should be complied with when processing personal data in AI systems. The UK's data protection framework, being reformed through Data Protection and Digital Information Bill (DPDI), will complement pro-innovation, proportionate, and context-based approach to regulating AI. Current rules on automated decision-making are confusing and complex, undermining confidence to develop and use innovative technologies. The DPDI Bill will expand lawful bases on which solely automated decisions that have significant effects on individuals can take place and provide boost in confidence to organizations looking to use technologies responsibly. It will continue to ensure data subject rights are protected with safeguards in place, including providing information on decisions, opportunity to make representations, and ability to request human intervention or contest decisions.",
+        "similarity_score": 0.4345,
+        "risk_level": "Low",
+        "reason": "The AI system operates under the UK_GDPR jurisdiction flag, meaning it falls within the scope of the UK's data protection framework, which mandates compliance with data protection principles when processing personal data in AI systems \u2014 a foundational concern addressed by Regulation #5. Additionally, as a general utility and productivity system with descriptive/informational capabilities, it may engage in or support automated processing activities that are subject to the evolving rules under the Data Protection and Digital Information (DPDI) Bill, which seeks to clarify lawful bases for automated decision-making and ensure appropriate safeguards are maintained."
+      }
+    ]
+  },
+  "control_requirements": {
+    "required_controls": [
+      {
+        "control": "PRIV-04",
+        "description": "Data retention and deletion",
+        "priority": "Critical",
+        "source": "P4",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "FAIR-02",
+        "description": "Bias testing plan \u2014 metrics and datasets",
+        "priority": "High",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-01",
+        "description": "Ownership and accountability \u2014 named responsible role",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "GOV-02",
+        "description": "Documented purpose and scope \u2014 intended use and limits",
+        "priority": "Medium",
+        "source": "P1",
+        "current_reviewer_status": "Not_Ready"
+      },
+      {
+        "control": "RISK-01",
+        "description": "System context captured \u2014 domain, stakeholders, decision impact, scale",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "RISK-02",
+        "description": "Risk classification completed \u2014 minimal, limited, high, unacceptable",
+        "priority": "Medium",
+        "source": "P2",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-01",
+        "description": "Data minimization",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "PRIV-03",
+        "description": "Notice and transparency for data subjects",
+        "priority": "Medium",
+        "source": "P4",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-01",
+        "description": "Protected groups considered",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "FAIR-07",
+        "description": "User recourse and appeals",
+        "priority": "Medium",
+        "source": "P5",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-01",
+        "description": "User-facing disclosure \u2014 AI involvement disclosed",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-02",
+        "description": "System limitations stated \u2014 known failure modes",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-03",
+        "description": "Explainability appropriate to context",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-04",
+        "description": "Documentation completeness \u2014 model card and datasheet",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "TRAN-07",
+        "description": "AI identity non-deception",
+        "priority": "Medium",
+        "source": "P6",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SAFE-01",
+        "description": "Safety requirements defined \u2014 harm scenarios",
+        "priority": "Medium",
+        "source": "P7",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "DOC-01",
+        "description": "System description pack complete",
+        "priority": "Medium",
+        "source": "P9",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "ACC-01",
+        "description": "Accessibility requirements captured",
+        "priority": "Medium",
+        "source": "P10",
+        "current_reviewer_status": "Partially_Ready"
+      },
+      {
+        "control": "SOC-01",
+        "description": "Intended societal benefit articulated",
+        "priority": "Medium",
+        "source": "P11",
+        "current_reviewer_status": "Partially_Ready"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "Establish and document a formal AI governance framework for GOV-02, including defined roles, responsibilities, accountability structures, and oversight mechanisms specific to this AI system.",
+      "why": "GOV-02 has an adequacy score of 0 and is fully Not_Ready with no evidence of any governance controls in place. For a generative AI system with low model interpretability deployed cross-border, the absence of any governance structure represents a foundational compliance failure under Regulation #5 and creates unacceptable risk of unaccountable AI decision-making.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "GOV-02"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "action": "Define and document specific data retention periods for all training, validation, test datasets, and operational logs, ensuring alignment with the minimum 30-month retention requirement referenced in the design review gaps.",
+      "why": "PRIV-04 explicitly identifies the absence of defined retention periods as a critical gap. Given the use of pre-trained models and generative AI, traceability of training data is essential for auditability under Regulation #5, and the lack of any retention schedule leaves the system non-required with documented requirements.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E4",
+        "E5",
+        "E6"
+      ]
+    },
+    {
+      "action": "Design, implement, and document concrete data deletion procedures and schedules, including verification mechanisms to confirm deletion has occurred at the end of each defined retention period.",
+      "why": "The design review identifies no description of actual deletion procedures or schedules under PRIV-04. For a cross-border deployment handling user data in a general utility/productivity context, uncontrolled data retention creates significant privacy risk and is a direct gap against Regulation #5 obligations.",
+      "urgency": "Critical",
+      "linked_controls": [
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E4",
+        "E5",
+        "E7"
+      ]
+    },
+    {
+      "action": "Implement and document data integrity preservation mechanisms for all retained datasets, including checksums, access controls, and audit trails to ensure retained data is not altered or corrupted during the retention period.",
+      "why": "PRIV-04 gaps confirm no evidence of data integrity mechanisms exists. For a generative AI system using pre-trained models, the integrity of retained training and validation data is critical for post-deployment audits and incident investigations required under Regulation #5.",
+      "urgency": "High",
+      "linked_controls": [
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E5",
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "action": "Adopt and document privacy-enhancing technologies (PETs), de-identification techniques, and data minimization practices applied to training and operational data, with system-specific descriptions of how each method is implemented.",
+      "why": "The PRIV-04 gap analysis explicitly flags the absence of PETs, de-identification, and data minimization methods. Given the generative AI risk driver and cross-border deployment, unmitigated personal data exposure in model training and inference pipelines is a high-priority risk under Regulation #5.",
+      "urgency": "High",
+      "linked_controls": [
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E4",
+        "E5",
+        "E8"
+      ]
+    },
+    {
+      "action": "Implement and document operational logging and record-keeping for the AI system's runtime behaviour, including inference requests, outputs, errors, and model version tracking, with clear log retention aligned to the defined retention schedule.",
+      "why": "PRIV-04 gaps confirm no documentation of logging or record-keeping implementation exists. For a generative AI system with low model interpretability, operational logs are a primary compensating control for auditability and incident response, as required under Regulation #5.",
+      "urgency": "High",
+      "linked_controls": [
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E5",
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "action": "Assign named roles and responsibilities for data retention and deletion oversight, and embed these into the broader governance framework, with documented escalation paths and review cadences.",
+      "why": "Both GOV-02 and PRIV-04 gaps indicate an absence of assigned accountability for governance and data lifecycle management. Without designated ownership, controls cannot be enforced or audited, which is a systemic risk for a cross-border generative AI deployment under Regulation #5.",
+      "urgency": "High",
+      "linked_controls": [
+        "GOV-02",
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "action": "Replace all generic policy submissions with system-specific documentation, including tailored policies, procedures, and control descriptions that reflect the actual architecture, data flows, and operational context of this AI system. Provide full supporting document packages beyond R1.",
+      "why": "The PRIV-04 review explicitly notes the submission is entirely generic with no system-specific content and only R1 provided. At assurance level UG with generative AI and pre-trained model risk drivers, generic documentation is insufficient to demonstrate control adequacy under Regulation #5 and will block progression through any formal review.",
+      "urgency": "High",
+      "linked_controls": [
+        "GOV-02",
+        "PRIV-04"
+      ],
+      "certifier_evidence_required": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8",
+        "E9"
+      ]
+    }
+  ],
+  "pii_findings": {
+    "detected": false,
+    "types": [],
+    "special_category_confirmed": false,
+    "gdpr_article_9_applies": false,
+    "children_data_confirmed": false
+  },
+  "audit_trail": {
+    "scoring_engine_version": "aigap-v1.0",
+    "registry_version": "aigap-v1.0",
+    "crp_id": "a641e51b-8b6e-4114-babb-4ad960ab7d8e",
+    "raw_risk_score": 18,
+    "adjusted_risk_score": 22.64,
+    "reviewer_gap_score": 23.5,
+    "controls_active": 19,
+    "controls_ready": 0,
+    "controls_partially_ready": 17,
+    "controls_not_ready": 2,
+    "vector_db_queries": 1,
+    "regulation_hits_returned": 10,
+    "classifier_run_at": "2026-09-02T06:04:58+00:00"
+  }
+}

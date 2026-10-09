@@ -1,0 +1,256 @@
+[
+  {
+    "control_id": "GOV-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three distinct deficiencies exist in the ownership and accountability documentation: (1) The named responsible role has no documented training or competency requirements tied to AI risk awareness \u2014 there is no evidence that the designated owner understands their obligations under an AI risk governance framework (aligned with GOVERN 2.2). (2) There is no defined escalation path or reporting line above the volunteer coordinator level, leaving executive or senior accountability unaddressed \u2014 the submission does not demonstrate how material AI risks would be escalated beyond the named role. (3) There is no defined review cadence or trigger condition for reassessing ownership documentation over time, meaning the assignment of responsibility could become stale without any mechanism to detect or correct this.",
+    "reviewer_suggestion": "Take the following concrete steps before the Certifier phase: (1) COMPETENCY \u2014 Amend the ownership policy or role description to explicitly state the minimum AI risk awareness competency expected of the named owner (e.g., completion of an AI governance or risk awareness module, or equivalent experience). Record evidence of the current owner meeting this standard. (2) ESCALATION PATH \u2014 Document a clear reporting line above the volunteer coordinator, identifying at least one senior or executive stakeholder (e.g., a board member, senior manager, or steering committee) who receives escalated AI risk issues. Even if full executive accountability is considered disproportionate at UG assurance level, a lightweight escalation contact must be named and documented. (3) REVIEW CADENCE \u2014 Insert a review schedule into the ownership documentation (e.g., annual review, or triggered by: system change, incident, or change of personnel). Record who is responsible for initiating the review and how outcomes are captured.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E1",
+      "E3",
+      "E4",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "GOV-02",
+    "reviewer_status": "Not_Ready",
+    "reviewer_gap": "No specific gap details were recorded, but the submission relies on generic, boilerplate language (\"documented policies, assigned responsibilities, and planned implementation measures\") without providing concrete, system-specific evidence that the documented purpose and scope \u2014 including intended use cases and explicit limits/exclusions \u2014 have been formally defined, approved, and communicated for this general_utility_productivity system at UG assurance level. There is no demonstration that the scope boundaries (e.g., what the system is NOT intended to do, user population limits, operational constraints) are explicitly articulated in a controlled document.",
+    "reviewer_suggestion": "1. Draft or locate a formal Purpose & Scope Statement specific to this system that explicitly defines: (a) the intended use cases, (b) the target user population, (c) operational boundaries and constraints, and (d) out-of-scope uses or prohibited applications. 2. Ensure the document is version-controlled, dated, and approved by the accountable owner. 3. Cross-reference the scope statement with any system design artefacts (e.g., architecture diagrams, data flow diagrams) to confirm alignment. 4. Publish or distribute the scope statement to relevant stakeholders and retain evidence of communication. 5. If responsibilities have been assigned, provide a named RACI or equivalent showing who owns the purpose/scope definition and its maintenance. All artefacts must be system-specific \u2014 generic or template-level language will not satisfy the control at UG assurance level.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ]
+  },
+  {
+    "control_id": "RISK-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Four interrelated contextual documentation gaps are present for this P2 domain system: (1) No explicit documentation of applicable legal or social norms and expectations for the operational context (e.g., food safety regulations, community kitchen standards) as required by MAP 1.1; (2) Organisational risk tolerance has not been formally stated or documented anywhere in the submission, as required by MAP 1.5; (3) No mechanism or process is described for collecting and integrating external stakeholder feedback (e.g., from kitchen visitors or community members) as required by GOVERN 5.1 and 5.2 \u2014 even at a lightweight scale appropriate to the low-risk context; and (4) Alignment between this AI system's use and the organisation's broader mission or strategic goals for AI adoption is absent, as required by MAP 1.3. Together, these gaps mean the system context is only partially captured and lacks the normative, risk, stakeholder, and strategic framing required for a complete MAP/GOVERN baseline.",
+    "reviewer_suggestion": "Before the Certifier phase, take the following concrete steps: (1) MAP 1.1 \u2014 Produce a short context register (1\u20132 pages) that explicitly lists applicable legal obligations (e.g., local food safety legislation, community kitchen bylaws, data privacy rules) and relevant social norms or community expectations, and link each to how the system's design accounts for them. (2) MAP 1.5 \u2014 Draft and have a responsible owner sign a formal risk tolerance statement that defines acceptable risk thresholds for this system (e.g., acceptable error rates in recommendations, tolerance for downtime), referencing the organisation's broader risk appetite where it exists. (3) GOVERN 5.1 / 5.2 \u2014 Define a proportionate external stakeholder feedback mechanism suited to the low-risk, minimal-scale context \u2014 this could be as lightweight as a periodic feedback form, a designated point of contact for community members, or a scheduled review meeting \u2014 and document how feedback will be reviewed and acted upon. (4) MAP 1.3 \u2014 Add a brief mission-alignment statement to the system documentation that explicitly connects this AI system's purpose and intended outcomes to the organisation's stated mission and any organisational AI strategy or principles document.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E1",
+      "E2",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "RISK-02",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three interrelated deficiencies exist in the risk classification submission for this P2 control: (1) Residual risk is not explicitly documented \u2014 even for minimal-risk systems, NIST AI RMF guidance requires that remaining risks after treatment measures are recorded and communicated to end users; (2) There is no documented process or schedule for reviewing or reassessing the risk classification when material changes occur (e.g., changes to scope, user base, or system capabilities); (3) The submission does not define reclassification triggers \u2014 specific conditions that would escalate the system to a higher risk tier (e.g., expansion to public deployment, addition of sensitive data collection, or integration with third-party models) are entirely absent.",
+    "reviewer_suggestion": "1. RESIDUAL RISK DOCUMENTATION: Produce a residual risk register or summary statement for the system that explicitly records all risks remaining after treatment controls are applied, their likelihood and impact ratings, and the rationale for accepting them at the current classification tier. This must be present even if the system is classified as minimal-risk, and should be communicated to relevant end users or operators. 2. REVIEW SCHEDULE: Amend the risk classification policy or SOP to include a defined review cadence (e.g., annual review, or review triggered by a material change event). Document who is responsible for initiating and approving the review, and where outcomes are recorded. 3. RECLASSIFICATION TRIGGERS: Define and document a formal list of trigger conditions that would mandate reclassification to a higher tier. Examples must include at minimum: expansion of the user base to the general public, addition of personal or sensitive data collection, changes to automated decision-making scope, integration of new AI components, or regulatory/legal changes. Embed these triggers into the existing risk management SOP and ensure they are linked to the change management process.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E1",
+      "E4"
+    ]
+  },
+  {
+    "control_id": "PRIV-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "The submission for Control P4 \u2013 Data Minimisation is insufficient across four dimensions: (1) No broader privacy policy framework or policy hierarchy is evidenced \u2014 the control record stands alone without reference to an overarching data minimisation policy or procedure document; (2) There is no documented review or audit cadence demonstrating how data minimisation principles are monitored and enforced over time; (3) A material inconsistency exists between the written attestation referencing 'planned implementation measures' and the apparent operational status of the system, which is unresolved and undermines confidence in the control's current effectiveness; (4) There is no evidence of staff or volunteer awareness, training, or communication regarding data minimisation obligations and practices.",
+    "reviewer_suggestion": "Before the Certifier phase, the following concrete steps should be taken: (1) Produce or reference an overarching Privacy or Data Minimisation Policy that sits above this control record, clearly establishing the policy hierarchy, scope, and ownership \u2014 ensure this document is formally approved and version-controlled; (2) Define and document a periodic review cadence (e.g., annual audit or quarterly review) for data minimisation practices, including who is responsible, what is reviewed, and how findings are recorded and actioned; (3) Resolve the 'planned vs. operational' inconsistency \u2014 either update the written attestation to accurately reflect the current operational state of the system with evidence of implemented measures, or clearly document which measures remain pending with a dated implementation roadmap; (4) Provide evidence of staff and volunteer training or awareness activities on data minimisation, such as training completion records, communications, or inclusion of data minimisation obligations in onboarding/induction materials.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E1",
+      "E2",
+      "E5",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "PRIV-03",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Four distinct transparency and notice gaps exist under P4:\n\n1. **Re-notification process absent**: There is no documented process for re-notifying volunteers when material system changes occur \u2014 such as the introduction of a new AI provider or the collection of new data types. The submission contains no trigger-based or periodic re-notification workflow.\n\n2. **No acknowledgement or sign-off records**: There are no formal records confirming that the two identified volunteers received, read, and understood the data subject notice. Without signed or logged acknowledgements, there is no verifiable proof that notice was effectively delivered.\n\n3. **Handbook paragraph not reproduced or appended**: The submission references a handbook paragraph as the basis for the notice but does not reproduce or attach its exact wording. The adequacy, completeness, and regulatory sufficiency of that notice cannot be independently assessed from the submission alone.\n\n4. **No future-scope notice update mechanism**: The submission does not describe how the notice would be revised or re-communicated if the tool's scope expands to process personal data in the future, leaving a forward-looking transparency gap.",
+    "reviewer_suggestion": "Address each gap with the following concrete steps before the Certifier phase:\n\n1. **Re-notification process**: Draft and formalise a written procedure that defines specific triggers for re-notification (e.g., change of AI provider, introduction of new data categories, change in data retention periods). The procedure should specify the timeline, responsible role, and communication channel for issuing updated notices to data subjects.\n\n2. **Acknowledgement records**: Collect and retain signed acknowledgement forms \u2014 or equivalent logged digital confirmations \u2014 from both volunteers confirming receipt and understanding of the current notice. These records must be dated and attributable to named individuals.\n\n3. **Handbook paragraph**: Reproduce the exact text of the referenced handbook paragraph in the submission (or append it as an annex). Conduct a gap analysis against applicable notice requirements (e.g., GDPR Art. 13/14 elements or equivalent) to confirm its adequacy, and update the wording if deficiencies are found.\n\n4. **Future-scope update mechanism**: Add a clause to the notice management procedure that explicitly addresses scope expansion scenarios. This should include a commitment to update the notice prior to any new processing activity commencing, with a defined review and approval workflow and a re-notification obligation to affected data subjects.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E1",
+      "E2",
+      "E4",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "PRIV-04",
+    "reviewer_status": "Not_Ready",
+    "reviewer_gap": "The submission for Control P4 (Data Retention and Deletion) is entirely generic and provides no system-specific content. The following critical elements are absent:\n\n1. **Retention periods**: No defined retention schedules are documented. The EU AI Act mandates a minimum of 30 months for training, validation, and test data as well as operational logs; no such periods are referenced or applied to this system.\n2. **Deletion procedures and schedules**: There is no description of how, when, or by whom data deletion is executed \u2014 no workflows, triggers, or automated/manual schedules are defined.\n3. **Data integrity mechanisms**: No evidence of controls (e.g., checksums, access controls, immutable storage) that preserve the integrity of retained datasets throughout their retention lifecycle.\n4. **Privacy-Enhancing Technologies (PETs) and data minimization**: As required by NIST AI 100-1, there is no mention of de-identification, anonymization, pseudonymization, aggregation, or any other data minimization technique applied to retained data.\n5. **Logging and record-keeping implementation**: No documentation exists describing how operational logs are generated, stored, protected, and retained for the AI system \u2014 including what events are logged, log formats, and retention durations.\n6. **Roles and responsibilities**: No named roles, teams, or individuals are assigned ownership or oversight of data retention and deletion activities (e.g., Data Owner, DPO, MLOps team).\n7. **System-specific policies and procedures**: The submission contains no artefacts tailored to this general_utility_productivity system at UG assurance level \u2014 no SOPs, data maps, or retention registers are provided.\n8. **Supporting evidence**: Only a single written attestation (R1) was submitted. No policy documents, technical configurations, design artefacts, or operational proofs accompany the claim.",
+    "reviewer_suggestion": "Address each gap with the following concrete steps before the Certifier phase:\n\n1. **Define and document retention periods**: Draft a Data Retention Schedule specific to this AI system that explicitly states retention durations for training data, validation data, test data, and operational logs \u2014 at minimum 30 months as required by the EU AI Act. Map each data category to its legal/regulatory basis for retention.\n\n2. **Document deletion procedures**: Create a formal Data Deletion SOP that describes the end-to-end deletion workflow: triggers (e.g., retention period expiry, user request), deletion methods (secure erasure standards such as NIST SP 800-88), responsible parties, verification steps, and audit trail requirements. Include a deletion schedule or calendar.\n\n3. **Implement and evidence data integrity controls**: Document the technical mechanisms used to preserve dataset integrity during retention (e.g., cryptographic hashing/checksums, access control lists, write-once storage, backup verification). Provide configuration evidence or technical documentation demonstrating these controls are active.\n\n4. **Adopt and document PETs and data minimization**: Identify all personal or sensitive data retained by the system and document which privacy-enhancing techniques are applied (e.g., anonymization, pseudonymization, differential privacy, aggregation). Reference NIST AI 100-1 alignment explicitly in the policy. Produce a data minimization assessment or privacy impact note.\n\n5. **Document logging and record-keeping implementation**: Produce a Logging Architecture document that specifies: what events are logged (model inputs/outputs, data access, deletions, errors), log format and storage location, access controls on logs, log integrity protections, and the retention period for logs (minimum 30 months per EU AI Act). Provide sample log outputs or configuration files as evidence.\n\n6. **Assign roles and responsibilities**: Update the system's RACI matrix or governance documentation to explicitly assign Data Retention Owner, Data Deletion Executor, and Compliance Oversight roles. Include named individuals or teams and escalation paths.\n\n7. **Replace generic submission with system-specific artefacts**: Rewrite all policy and procedure documents to reference this specific general_utility_productivity system, its data flows, its technology stack, and its UG assurance level obligations. Generic boilerplate is not acceptable at Certifier review.\n\n8. **Submit a full evidence package**: Supplement the R1 attestation with the full set of required evidence types listed below, ensuring each document is version-controlled, dated, and approved by an accountable owner.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": []
+  },
+  {
+    "control_id": "FAIR-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three distinct gaps exist under the 'Protected groups considered' control (P5 domain): (1) There is no documented periodic review cycle specifying how and when protected group considerations will be reassessed as the system evolves or the user base changes \u2014 the current submission references planned measures but lacks a defined cadence or trigger-based review mechanism. (2) Allergen flagging, while described as a system prompt instruction, has no accompanying evidence of testing or validation to confirm it reliably and consistently performs as intended across varied inputs and edge cases. (3) There is no documented mechanism for collecting feedback from affected individuals (e.g. kitchen visitors or other end-users from protected groups) and feeding that feedback back into system improvement \u2014 a requirement aligned with GOVERN 5.1 external engagement obligations.",
+    "reviewer_suggestion": "Address each gap as follows before the Certifier phase: (1) REVIEW CYCLE \u2014 Draft and approve a formal policy or SOP that defines a periodic review schedule (e.g. semi-annual or triggered by material system changes or user base shifts) for reassessing protected group considerations, including named responsible roles and escalation paths. (2) ALLERGEN FLAGGING VALIDATION \u2014 Design and execute a structured test plan covering representative and edge-case prompts to validate that the allergen-flagging system prompt instruction performs reliably; document pass/fail results, failure modes, and any remediation taken. (3) FEEDBACK MECHANISM \u2014 Define and document a feedback collection process for affected individuals (e.g. a structured feedback form, periodic user interviews, or a designated reporting channel), including how feedback is reviewed, triaged, and incorporated into system updates; provide evidence that this process is operational or formally planned with an activation date.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E5",
+      "E2",
+      "E8",
+      "E1"
+    ]
+  },
+  {
+    "control_id": "FAIR-02",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "The submission contains no quantitative bias metrics, no characterised dataset or corpus, no operationalised intervention thresholds, no documented volunteer assessment records, no intersectional bias analysis beyond cuisine geography, no preliminary bias evaluation results, and no structured documentation of bias mitigation methods. The current approach relies entirely on qualitative volunteer impressions and a subjective, unlogged intervention trigger ('repeatedly inappropriate over two weeks'), which fails to satisfy the explicit 'metrics and datasets' requirement of the control, NIST MEASURE 2.1 (test sets and tools documented), NIST MEASURE 2.11 (fairness and bias evaluation results documented), and EU AI Act Article 19 (documented bias mitigation methods). There is no evidence that volunteer assessments are recorded or retained in any form that would permit independent verification.",
+    "reviewer_suggestion": "1. DEFINE QUANTITATIVE BIAS METRICS: Document a minimum metric set covering at least: (a) cuisine-category distribution ratios across all outputs sampled, (b) ingredient diversity index (e.g., Shannon entropy across cultural food groups), (c) representation frequency counts per cuisine/dietary category, and (d) a severity scale (e.g., 1\u20135) for flagged outputs. Record these in a Bias Testing Metrics Register.\n\n2. CHARACTERISE THE DATASET/CORPUS: Produce a Data Sheet or Model Card section that describes the ingredients/recipe corpus used \u2014 including size, source(s), cultural coverage, language(s), and known gaps \u2014 so representativeness can be independently assessed.\n\n3. OPERATIONALISE THE INTERVENTION THRESHOLD: Replace the subjective 'repeatedly inappropriate over two weeks' trigger with a defined rule, e.g., '\u22653 severity-4+ flags within any rolling 14-day window triggers a mandatory system prompt review'. Document this rule in a Bias Response SOP.\n\n4. IMPLEMENT VOLUNTEER ASSESSMENT LOGGING: Create a structured logging template (digital or paper) capturing: tester ID/role, date, output sampled, metric scores assigned, and free-text notes. Retain logs for a minimum period (e.g., 12 months) to enable independent verification.\n\n5. EXPAND BIAS DIMENSIONS: Extend the testing plan to explicitly address intersectional bias dimensions including: dietary restrictions linked to cultural/religious identity (e.g., halal, kosher, Hindu vegetarian), socioeconomic accessibility of ingredients (e.g., cost proxies, availability by region), and accessibility needs. Document these dimensions in the plan.\n\n6. PRODUCE PRELIMINARY BIAS EVALUATION RESULTS: Run at least one documented bias evaluation cycle using the defined metrics and dataset before the Certifier phase. Record results \u2014 even if the system is low-risk \u2014 in a Bias Evaluation Results Report to satisfy NIST MEASURE 2.11.\n\n7. DOCUMENT BIAS MITIGATION METHODS: Formalise the system prompt adjustment approach as a structured mitigation method: describe the trigger conditions, the review process, who approves changes, how changes are version-controlled, and how effectiveness is re-evaluated post-adjustment. This satisfies EU AI Act Article 19.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E4",
+      "E6",
+      "E5",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "FAIR-07",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "No documented timeframe or expectation for how quickly Sam Okafor will respond to a raised concern, even informally. Additionally, there is no record-keeping or logging mechanism mentioned for concerns raised, which could make it difficult to identify recurring issues over time.",
+    "reviewer_suggestion": "1. Define and document a formal or informal response timeframe (e.g., acknowledgement within 2 business days, resolution within 10 business days) for concerns raised through the user recourse and appeals process, and assign this expectation explicitly to Sam Okafor's role. 2. Establish a lightweight logging or record-keeping mechanism (e.g., a shared register, ticketing system, or structured log) to capture all concerns raised, their status, and outcomes. This log should be reviewed periodically to identify recurring issues and inform system improvements. Both measures should be reflected in updated policy or SOP documentation before the Certifier phase.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E6",
+      "E8",
+      "E1"
+    ]
+  },
+  {
+    "control_id": "TRAN-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Four distinct deficiencies undermine this control's readiness: (1) There is no documented process governing how and when disclosure notices are reviewed, updated, or re-issued when the underlying AI model or system changes (e.g., a transition from GPT-4o to a successor model), meaning disclosures may become stale and inaccurate without any trigger or owner. (2) Volunteer briefings on AI involvement are conducted informally by Sam Okafor with no sign-off sheet, acknowledgement record, or onboarding checklist \u2014 there is currently no auditable evidence that any individual volunteer received and understood the disclosure. (3) There is no described mechanism to ensure new or temporary volunteers who join after the initial briefing cohort are briefed on AI involvement, creating a structural gap where an entire class of users may operate the system without ever receiving disclosure. (4) The submission contains no reference to a user-facing channel or procedure through which users can seek further information about the AI system or challenge AI-generated outputs, as explicitly required by OECD Principle 1.30(iv) and EU AI Act Article 35.",
+    "reviewer_suggestion": "Before the Certifier phase, take the following concrete steps: (1) Draft and adopt a Model/System Change Disclosure SOP that defines a trigger list (e.g., model version change, provider change, material capability change), assigns a named owner responsible for reviewing and re-issuing disclosure notices within a defined SLA (e.g., 5 business days of change), and records each re-issuance event in a disclosure change log. (2) Create a formal volunteer onboarding checklist that includes an AI-disclosure acknowledgement item; require each volunteer (existing and new) to sign or digitally acknowledge receipt \u2014 retain these records in a centralised register. Backfill acknowledgements for all volunteers briefed to date by Sam Okafor. (3) Embed the AI-disclosure briefing and acknowledgement step into the standard onboarding workflow for all new and temporary volunteers, so that no individual can be granted system access before disclosure is confirmed and logged. (4) Add a clearly visible 'AI Information & Challenge' section to all user-facing interfaces and documentation, specifying: (a) a named contact or helpdesk channel for further questions about the AI system, (b) a described process by which users can flag, contest, or request human review of AI outputs, and (c) a reference to the applicable regulatory basis (OECD Principle 1.30(iv); EU AI Act Article 35). Document this mechanism in the system's transparency policy.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E1",
+      "E8",
+      "E4"
+    ]
+  },
+  {
+    "control_id": "TRAN-02",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three interrelated weaknesses undermine full readiness for this control: (1) There is no formal, recurring process for reviewing and updating the stated system limitations as the system evolves \u2014 the current documentation captures a point-in-time snapshot with no defined review cadence or trigger conditions. (2) There is no documented mechanism by which users can report newly discovered failure modes or edge cases back to the system owner, meaning the feedback loop between operational experience and stated limitations is absent. (3) The limitations are expressed informally in narrative prose with no traceable link to a structured failure mode analysis (e.g., FMEA, risk register, or equivalent artefact), leaving the basis for the stated limitations unverifiable by a Certifier.",
+    "reviewer_suggestion": "1. REVIEW PROCESS \u2014 Draft and adopt a short Limitations Review SOP (or add a dedicated section to an existing policy) that specifies: (a) a minimum annual review cycle, (b) event-triggered reviews (e.g., new model version, significant change in use-case scope, post-incident), and (c) named role(s) responsible for initiating and approving each review. Record the next scheduled review date in the document itself.\n\n2. USER FEEDBACK MECHANISM \u2014 Document a lightweight, named channel through which users can submit reports of unexpected behaviour or newly discovered failure modes (e.g., a dedicated email alias, a ticketing queue, or a feedback form). Publish this channel in the user-facing limitations statement and define the triage/response SLA in the SOP. Retain logs of submissions and dispositions as operational proof.\n\n3. STRUCTURED FAILURE MODE ANALYSIS \u2014 Produce or reference a structured artefact (risk register entry, FMEA table, or equivalent) that lists each known failure mode, its likelihood/impact rating, and the mitigating control or caveat already stated to users. Cross-reference this artefact from the limitations statement so a Certifier can trace each stated limitation back to its analytical basis. At UG assurance level a lightweight table is sufficient \u2014 exhaustive quantitative analysis is not required.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E8",
+      "E6"
+    ]
+  },
+  {
+    "control_id": "TRAN-03",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three distinct explainability gaps exist under P6: (1) There is no documented mechanism governing how the system prompt instruction is maintained or reviewed over time \u2014 meaning any change to the prompt could silently erode the explainability commitment without detection or accountability. (2) There is no described recourse or challenge pathway for volunteers who do not understand or wish to dispute a system suggestion, as required by OECD 1.30(iv). (3) The submission does not address explainability obligations toward end-beneficiaries (e.g., community kitchen guests) who may be indirectly affected by the system's outputs, leaving a potential gap if the deployment context expands.",
+    "reviewer_suggestion": "Address all three gaps before the Certifier phase as follows: (1) Prompt governance \u2014 establish and document a formal prompt change-management process, including version control for the system prompt, a designated reviewer/owner, a defined review cadence (e.g., quarterly or on material change), and a sign-off record confirming that explainability commitments are re-validated after each change. (2) Recourse pathway \u2014 document a clear, accessible process by which a volunteer can flag that they do not understand a suggestion or wish to challenge it, including who receives the challenge, the expected response timeframe, and how outcomes are recorded; reference this pathway explicitly in volunteer-facing materials. (3) End-beneficiary explainability \u2014 either formally document that end-beneficiaries are out of scope for the current deployment context (with a rationale and boundary conditions that would trigger a re-assessment), or, if they may be affected, draft a plain-language explainability statement describing what the system does and how it influences decisions that affect them.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E7",
+      "E1",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "TRAN-04",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "The submission provides only a model card and lacks four key documentation elements required by this control: (1) a datasheet covering training data characteristics (partially mitigated by the API/no-fine-tuning context, but still absent as a discrete artefact); (2) any description of testing and evaluation procedures, including how the system prompt was validated or what informal pre-deployment testing was conducted; (3) a description of the system prompt content and the rationale for how kitchen-specific instructions were determined; and (4) performance metrics or output quality assessment of any kind. The current submission text is generic boilerplate and does not demonstrate substantive engagement with any of these documentation requirements.",
+    "reviewer_suggestion": "1. DATASHEET: Produce a datasheet artefact (even a concise one) that documents the upstream model's training data provenance, known data characteristics, and any limitations relevant to the kitchen/utility context. Reference the API provider's published model documentation (e.g., OpenAI model cards, Anthropic model cards) and explicitly link it to this submission to partially satisfy the training-data dimension in a no-fine-tuning context. 2. TESTING & EVALUATION: Document the testing and evaluation procedures applied before deployment \u2014 at minimum, describe any informal prompt testing, scenario walkthroughs, or user acceptance checks performed. Record who conducted the testing, when, and what criteria were used to judge acceptability. 3. SYSTEM PROMPT: Provide a description (or redacted summary if confidentiality is a concern) of the system prompt content, explain the process by which kitchen-specific instructions were identified and drafted, and record who approved the final prompt. 4. PERFORMANCE METRICS: Define and document at least a basic output quality assessment \u2014 this could be a structured set of test cases with expected vs. actual outputs, user feedback collected post-deployment, or qualitative evaluation criteria. Compile these into the model card or a supplementary evaluation report and attach as evidence.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E1"
+    ]
+  },
+  {
+    "control_id": "TRAN-07",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three interrelated deficiencies undermine the completeness of this control: (1) There is no documented process for periodic re-testing or ongoing monitoring to verify that the non-deception instruction survives model or system prompt updates \u2014 the current posture relies solely on a static system prompt with no assurance it persists after changes. (2) There is no standalone formal policy or procedure document governing AI identity non-deception; the system prompt instruction alone is insufficient for auditability, as it conflates the control mechanism with the control governance. (3) There is no defined change-management or continuity procedure specifying how the control is validated and reinstated when the underlying model (e.g., GPT-4o) or system prompt is modified by an administrator \u2014 leaving a potential window of non-compliance after every update.",
+    "reviewer_suggestion": "1. POLICY DOCUMENT: Draft and approve a concise formal policy (1\u20132 pages) explicitly governing AI identity non-deception for this system. It should state the requirement, scope, owner, review cadence, and reference the system prompt as the primary technical control mechanism. 2. CHANGE MANAGEMENT PROCEDURE: Create a documented SOP that mandates a non-deception verification step as part of any model upgrade or system prompt change workflow. This should include a named responsible role (e.g., System Administrator or AI Product Owner), a required sign-off checklist, and a maximum allowable time-to-verify window after each change. 3. PERIODIC RE-TESTING PLAN: Define and implement a scheduled re-testing regime (e.g., quarterly or after every model/prompt update) using a standardised set of probe questions designed to confirm the AI correctly identifies itself and does not deceive users about its nature. Log results and retain them as operational evidence. 4. MONITORING LOGS: Where technically feasible, enable or configure logging of interactions where AI identity is queried, to support ongoing assurance and incident detection. Ensure logs are retained in line with the organisation's data retention policy.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E1",
+      "E5",
+      "E6",
+      "E4"
+    ]
+  },
+  {
+    "control_id": "SAFE-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three distinct deficiencies exist in the harm scenario documentation for this P7 control: (1) There is no defined process or cadence for periodically reviewing and updating harm scenarios \u2014 the submission contains no schedule, trigger conditions, or ownership for revisiting scenarios as the system evolves or new risks emerge. (2) The mitigation for the volunteer over-reliance scenario ('limitations clearly stated') is insufficiently detailed \u2014 it is unclear where these limitations are surfaced beyond the system prompt (e.g., UI disclosures, onboarding materials, in-context warnings), and there is no evidence of how their effectiveness is monitored. (3) The incident reporting pathway for the offensive content scenario is underdocumented \u2014 'report to Sam' does not constitute a formal pathway; there is no named role/title, escalation chain, response SLA, or record-keeping mechanism described.",
+    "reviewer_suggestion": "Address each gap as follows before the Certifier phase: (1) PERIODIC REVIEW PROCESS \u2014 Draft and approve a short SOP or policy addendum that specifies: a named review owner (by role, not individual), a minimum review cadence (e.g., annually or upon material system change), and the criteria that trigger an out-of-cycle review. Record the date of the most recent review. (2) OVER-RELIANCE LIMITATION COMMUNICATIONS \u2014 Enumerate every touchpoint where volunteer limitations are disclosed (e.g., system prompt, UI tooltip, onboarding screen, help documentation) and provide screenshots or design artefacts for each. Add a brief statement on how the adequacy of these disclosures is assessed (e.g., user testing, feedback review). (3) INCIDENT REPORTING PATHWAY \u2014 Replace the informal 'report to Sam' reference with a documented incident response procedure that includes: a role-based contact (e.g., 'AI Safety Lead'), an alternative/backup contact, a defined response SLA, a log or ticketing mechanism for tracking reports, and a feedback loop to harm scenario updates. A simple one-page SOP or RACI entry is sufficient at UG assurance level.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E4",
+      "E1",
+      "E6"
+    ]
+  },
+  {
+    "control_id": "DOC-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Four distinct deficiencies exist in the system description pack: (1) No explicit mapping or acknowledgement that the system meets the OECD AI System definition (or equivalent regulatory framework cited in the control context), leaving traceability incomplete. (2) The system prompt content is only summarised at a high level \u2014 the actual prompt text or its key constraints (e.g. scope limitations, safety guardrails, persona boundaries) are neither reproduced nor formally referenced. (3) There is no documented mechanism, verification procedure, or audit trail confirming that the zero-retention API option is active and remains enforced over time. (4) The UG assurance level is cited in the written answer but is not explained, justified, or cross-referenced within the system description pack itself, making the rationale opaque to reviewers and certifiers.",
+    "reviewer_suggestion": "Close all four gaps before the Certifier phase as follows:\n1. OECD/Regulatory Mapping \u2014 Add a dedicated paragraph (or annex) to the system description pack that explicitly references the applicable regulatory definition of an AI system (e.g. OECD AI Principles, EU AI Act Article 3(1), or the framework cited in the control context) and includes a brief statement confirming the system satisfies that definition, with a rationale sentence linking system characteristics to each definitional criterion.\n2. System Prompt Documentation \u2014 Append the full system prompt text (or a formally version-controlled excerpt covering all key constraints) as a controlled annex to the pack. If the prompt is commercially sensitive, produce a redacted reference copy and log the full version in a restricted evidence repository, cross-referencing it from the pack.\n3. Zero-Retention Verification \u2014 Document the technical mechanism used to enable zero-retention (e.g. API header/flag, contractual data-processing addendum clause) and establish a periodic verification procedure (e.g. quarterly log review or automated header-check test) with results recorded in an audit log. Include at least one completed verification record as evidence.\n4. UG Assurance Level Justification \u2014 Insert a clearly labelled section in the system description pack that defines the UG assurance level, explains the criteria used to assign it to this system (e.g. risk tier, user population, data sensitivity), and cross-references the assurance framework document from which the level is drawn.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E6",
+      "E7"
+    ]
+  },
+  {
+    "control_id": "ACC-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Three distinct deficiencies exist in the current accessibility requirements documentation for this P10 control: (1) There is no formal, periodic review cadence defined \u2014 the only documented trigger for revisiting accessibility requirements is 'if volunteers change', which is event-driven and ad hoc rather than a structured, time-bound cycle. (2) Language accessibility for non-English-speaking volunteers is unaddressed \u2014 there is no documented process for identifying, assessing, or accommodating volunteers whose primary language is not English, beyond the same vague 'reviewed if volunteers change' note. (3) There is no reference to any recognised accessibility standard (e.g., WCAG 2.1 or equivalent) in the policy or design artefacts, which is expected for completeness at UG assurance level for a general utility/productivity system.",
+    "reviewer_suggestion": "Take the following concrete steps before the Certifier phase: (1) REVIEW CADENCE \u2014 Amend the existing accessibility policy or SOP to define an explicit periodic review cycle (e.g., annually or bi-annually), document the review trigger criteria (including but not limited to volunteer changes), and name the role responsible for initiating each review. Retain dated meeting minutes or a review log as evidence. (2) LANGUAGE ACCESSIBILITY PROCESS \u2014 Draft and formalise a short process or procedure that describes how the organisation identifies non-English-speaking volunteers at onboarding, what assessment or accommodation steps are taken (e.g., translated materials, bilingual support), and how this is recorded. This can be a lightweight addendum to the existing accessibility policy. (3) ACCESSIBILITY STANDARD REFERENCE \u2014 Update the policy, design documentation, or requirements register to explicitly reference a recognised accessibility standard appropriate to the system's scope (e.g., WCAG 2.1 Level A/AA for any user-facing interfaces, or an equivalent standard for non-web tooling). A brief rationale statement explaining the chosen standard and its applicability to the system is sufficient for UG assurance level.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E3",
+      "E2",
+      "E1",
+      "E8"
+    ]
+  },
+  {
+    "control_id": "SOC-01",
+    "reviewer_status": "Partially_Ready",
+    "reviewer_gap": "Two weaknesses undermine the current articulation of intended societal benefit: (1) The benefit claim is not anchored to any recognised external framework or standard (e.g., ATRS or equivalent), leaving the articulation without an independently verifiable reference point. While not strictly mandatory at UG assurance level, the absence reduces credibility and comparability. (2) Ongoing recognition and monitoring of societal benefit rests entirely on informal, single-person observation by Sam Okafor, with no lightweight qualitative indicator, structured check-in cadence, or secondary accountability mechanism in place. This creates a single point of failure for continued benefit accountability and provides no auditable trail of periodic review.",
+    "reviewer_suggestion": "1. Framework linkage: Annotate the existing benefit articulation document to map the stated societal benefits to at least one recognised reference point (e.g., ATRS societal benefit categories, UN SDGs, or an equivalent domain-relevant standard). Even a brief mapping table appended to the current policy document is sufficient at UG level. 2. Lightweight monitoring cadence: Establish a simple, repeatable check-in process \u2014 for example, a quarterly one-page qualitative review completed by Sam Okafor and countersigned by a second responsible party (e.g., a line manager or product owner). Define at least one qualitative indicator (e.g., user-reported utility, accessibility reach, or harm-reduction signal) to track benefit realisation over time. Document the cadence formally in the relevant policy or SOP, and retain completed review records as operational proof. Both actions should be completed and evidenced before the Certifier phase review.",
+    "user_commitment": "We commit to addressing the identified gaps before the Certifier phase through targeted implementation and documentation.",
+    "future_evidence_required": [
+      "E1",
+      "E2",
+      "E3",
+      "E8"
+    ]
+  }
+]

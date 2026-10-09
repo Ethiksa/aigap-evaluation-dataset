@@ -1,0 +1,44 @@
+{
+  "project_id": "proj-recipe-suggester-2026-001",
+  "run_at": "2026-09-02T06:05:34+00:00",
+  "input_file": "examples/reviewer_test_input.json",
+  "assurance_level": "UG",
+  "assurance_grade": "L1",
+  "risk_score": 18,
+  "risk_percentage": 18.0,
+  "risk_category": "Minimal",
+  "adjusted_risk_category": "Minimal",
+  "controls_total": 19,
+  "controls_ready": 0,
+  "controls_partially_ready": 17,
+  "controls_not_ready": 2,
+  "controls_not_applicable": 0,
+  "regulations_triggered": 1,
+  "recommendations_generated": 8,
+  "cost_summary": {
+    "anthropic": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 81249,
+      "output_tokens": 26006,
+      "total_tokens": 107255,
+      "input_cost_usd": 0.243747,
+      "output_cost_usd": 0.39009,
+      "total_cost_usd": 0.633837
+    },
+    "openai": {
+      "model": "text-embedding-3-small",
+      "total_tokens": 1024,
+      "total_cost_usd": 2e-05
+    },
+    "grand_total_usd": 0.633857,
+    "pricing_reference": "Prices as of June 2026"
+  },
+  "crp_sealed": true,
+  "output_files": {
+    "crp": "outputs/proj-recipe-suggester-2026-001_crp.json",
+    "crp_feedback": "outputs/proj-recipe-suggester-2026-001_crp_feedback.json",
+    "handoff": "outputs/proj-recipe-suggester-2026-001_handoff.json",
+    "risk_classifier": "outputs/proj-recipe-suggester-2026-001_risk_classifier.json",
+    "pipeline_summary": "outputs/proj-recipe-suggester-2026-001_pipeline_summary.json"
+  }
+}
