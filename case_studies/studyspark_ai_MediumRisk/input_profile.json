@@ -1,0 +1,1150 @@
+{
+  "registry_version": "aigap-v1.0",
+  "sealed": true,
+  "project_id": "proj-studyspark-ai-2026-001",
+  "intake_version": "1.0",
+  "created_at": "2026-06-15T09:00:00+00:00",
+  "project_description": "StudySpark AI is an internal assistant used by the Learning Support Office (LSO) at Ashcombe University to help staff draft personalised study guidance messages for students who have reported academic difficulties. An LSO staff member types a short summary of a student's reported difficulty (for example, 'struggling with time management for coursework deadlines') along with the student's course and year. The tool, powered by OpenAI GPT-4o via Azure OpenAI (EU region), drafts a suggested guidance message that the staff member reviews, edits as needed, and sends personally. The tool does not contact students directly and does not make any decision about a student's academic standing, extensions, or support eligibility. It is accessible only to the seven LSO staff members via the university's internal single sign-on portal. It is in pilot use for one academic term before a decision is made on wider rollout.",
+  "domains": [
+    {
+      "domain": "general_utility_productivity",
+      "weight": 0.0,
+      "is_primary": true
+    }
+  ],
+  "primary_domain": "general_utility_productivity",
+  "user_types": [
+    "internal_employees"
+  ],
+  "children_minors": false,
+  "vulnerable_adults": false,
+  "deployment": "internal_tool",
+  "rights_affecting": false,
+  "data_types": [
+    "personal_identifiable_information"
+  ],
+  "capability": "assistive",
+  "human_oversight": "always",
+  "testing_maturity": "pilot",
+  "generative_ai": true,
+  "output_modalities": [
+    "text"
+  ],
+  "testing_stage": "pilot",
+  "persuasion": false,
+  "adaptive_learning": false,
+  "external_deps": true,
+  "certification_expected": false,
+  "pre_trained_model": true,
+  "cross_border": "false",
+  "synthetic_data": false,
+  "jurisdiction_flags": [],
+  "scale": "small",
+  "model_interpretability": "medium",
+  "safety_critical": false,
+  "time_sensitive": false,
+  "subsystems": [
+    "ADR"
+  ],
+  "multi_model": false,
+  "agentic": false,
+  "data_retention_capability": "full",
+  "prior_incidents": [],
+  "free_text_answers": {
+    "Q0": "StudySpark AI drafts personalised study guidance messages for Learning Support Office staff to review and send to students who have reported academic difficulties. It uses Azure OpenAI GPT-4o (EU-hosted) and is used only by 7 LSO staff. No message is sent to a student without staff review and edit."
+  },
+  "llm_extractions": {
+    "questions_processed": [
+      "Q0"
+    ],
+    "extractions": {
+      "Q0": {
+        "extracted_value": "internal_staff_drafting_assistant",
+        "confidence": 0.97,
+        "method": "auto_mapped",
+        "safety_flags": {
+          "children_minors": false,
+          "vulnerable_adults": false,
+          "has_autonomous_actions": false,
+          "safety_critical": false,
+          "rights_affecting": false
+        }
+      }
+    },
+    "validated_at": "2026-06-15T08:55:00+00:00"
+  },
+  "level_assignment": {
+    "raw_score": 52,
+    "max_score": 100,
+    "percentage": 52.0,
+    "assurance_level": "PG",
+    "assurance_grade": "L1+",
+    "mandatory_overrides_applied": [],
+    "assigned_at": "2026-06-15T08:58:00+00:00",
+    "scoring_breakdown": {
+      "Q1_domain_general_utility": 0,
+      "Q2_user_internal_employees": 0,
+      "Q3_deployment_internal_tool": 0,
+      "Q4_rights_affecting_no": 0,
+      "Q5_data_types_pii": 10,
+      "Q6_capability_assistive": 0,
+      "Q7_human_oversight_always": 0,
+      "Q8_testing_maturity_pilot_tested": 3,
+      "Q9_generative_ai_yes": 15,
+      "Q10_development_stage_pilot": 3,
+      "Q11_persuasion_no": 0,
+      "Q12_adaptive_learning_no": 0,
+      "Q13_external_deps_yes": 10,
+      "Q14_certification_expected_no": 0,
+      "Q15_pretrained_model_yes": 8,
+      "Q16_cross_border_no": 0,
+      "Q17_synthetic_data_no": 0,
+      "Q18_jurisdiction_internal_only": 0,
+      "Q19_scale_small_team": 0,
+      "Q20_interpretability_partial": 3,
+      "Q21_safety_critical_no": 0,
+      "Q22_subsystems_adr_only": 0,
+      "Q23_multi_model_no": 0,
+      "Q24_data_retention_full": 0,
+      "Q25_prior_incidents_none": 0,
+      "total_raw_score": 52
+    }
+  },
+  "active_control_set": [
+    {
+      "control_id": "ACC-01",
+      "domain": "P10",
+      "category": "accessibility",
+      "title": "Accessibility requirements captured \u2014 language, disability access, device constraints",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What accessibility requirements are planned, including language, disability access, device constraints, and basic usability assumptions?"
+    },
+    {
+      "control_id": "ACC-03",
+      "domain": "P10",
+      "category": "accessibility",
+      "title": "Human factors hazards assessed \u2014 automation bias, over-trust, workflow harms",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What human-factors hazards are anticipated, such as over-trust, automation bias, or workflow misuse?"
+    },
+    {
+      "control_id": "ACC-05",
+      "domain": "P10",
+      "category": "accessibility",
+      "title": "Protections for vulnerable groups implemented \u2014 minors and marginalized groups",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What protections are planned for vulnerable groups, including minors or marginalized users where relevant to the declared user population?"
+    },
+    {
+      "control_id": "ACC-07",
+      "domain": "P10",
+      "category": "accessibility",
+      "title": "Harmful UX patterns avoided \u2014 dark patterns, coercive consent, confusing disclosures",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "How will harmful UX patterns such as coercive consent, dark patterns, or confusing disclosures be avoided by design?"
+    },
+    {
+      "control_id": "DOC-01",
+      "domain": "P9",
+      "category": "documentation",
+      "title": "System description pack complete \u2014 purpose, scope, users, limitations",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What system description pack is planned, including purpose, users, scope, assumptions, and limitations?"
+    },
+    {
+      "control_id": "FAIR-01",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "Protected groups considered",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "Which protected or vulnerable groups could be affected by this system, and how has that been considered in the design?"
+    },
+    {
+      "control_id": "FAIR-02",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "Bias testing plan \u2014 metrics and datasets",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R4"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R4"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What bias testing strategy is planned, including target groups, metrics, datasets, and acceptable thresholds?"
+    },
+    {
+      "control_id": "FAIR-07",
+      "domain": "P5",
+      "category": "fairness",
+      "title": "User recourse and appeals \u2014 especially for high-impact decisions",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "If a fairness-related harm affects a person, what appeals or recourse route will exist?"
+    },
+    {
+      "control_id": "GOV-01",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Ownership and accountability \u2014 named responsible role",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "Who is accountable for this system, what decisions are they responsible for, and how will accountability be maintained across design, deployment, and oversight?"
+    },
+    {
+      "control_id": "GOV-02",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Documented purpose and scope \u2014 intended use and limits",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What is the system's intended purpose, intended users, intended operating context, and explicit boundary of non-use or out-of-scope use?"
+    },
+    {
+      "control_id": "GOV-03",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Stakeholder impact assessment \u2014 who can be harmed and how",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "Who could be helped, harmed, excluded, or burdened by this system, and through what pathways?"
+    },
+    {
+      "control_id": "GOV-04",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Risk assessment performed \u2014 initial and periodic",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "How was project risk assessed at design time, what assumptions were used, and how will reassessment occur as the system evolves?"
+    },
+    {
+      "control_id": "GOV-05",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Human oversight plan \u2014 when and how humans intervene",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What human oversight model will govern the system, including who reviews outputs, who can intervene, and at what decision points?"
+    },
+    {
+      "control_id": "GOV-06",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Incident response and escalation \u2014 including harmful outputs",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "If harmful outputs, failures, or governance incidents occur, what incident response and escalation pathway is planned?"
+    },
+    {
+      "control_id": "GOV-10",
+      "domain": "P1",
+      "category": "governance",
+      "title": "Regulatory compliance mapping",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "Which laws, regulations, standards, or sector-specific obligations apply to this system, and how has the design been mapped to satisfy them?"
+    },
+    {
+      "control_id": "HUMO-01",
+      "domain": "P3",
+      "category": "human_oversight",
+      "title": "Oversight roles defined and trained",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What human oversight roles will exist, what are they expected to do, and what competence or training will those roles require?"
+    },
+    {
+      "control_id": "HUMO-02",
+      "domain": "P3",
+      "category": "human_oversight",
+      "title": "Human intervention points defined \u2014 override, review, escalation",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "At which points can humans review, override, halt, or escalate the system, and how will those intervention points work?"
+    },
+    {
+      "control_id": "HUMO-03",
+      "domain": "P3",
+      "category": "human_oversight",
+      "title": "User recourse process defined \u2014 appeal and complaint",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "If users want to dispute an outcome, complain, or request review, what recourse path is planned?"
+    },
+    {
+      "control_id": "HUMO-04",
+      "domain": "P3",
+      "category": "human_oversight",
+      "title": "Safe fallback behaviors implemented",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "What safe fallback behavior is planned when the system is uncertain, unavailable, or detects elevated risk?"
+    },
+    {
+      "control_id": "PRIV-01",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data minimization",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What minimum data is actually necessary for the system to function, and what data will be excluded by design?"
+    },
+    {
+      "control_id": "PRIV-02",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Lawful basis and consent clarity",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What lawful basis, consent model, or permission structure is planned for the data used by the system?"
+    },
+    {
+      "control_id": "PRIV-03",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Notice and transparency for data subjects",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "How will affected users be informed about what data is used, why it is used, and how the AI system is involved?"
+    },
+    {
+      "control_id": "PRIV-04",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data retention and deletion",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What data retention, deletion, and lifecycle rules are planned for inputs, outputs, and related records?"
+    },
+    {
+      "control_id": "PRIV-05",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Access control and least privilege",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What access controls and least-privilege assumptions are planned for data, models, prompts, and interfaces?"
+    },
+    {
+      "control_id": "PRIV-06",
+      "domain": "P4",
+      "category": "privacy",
+      "title": "Data provenance and rights",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What is the provenance of the data, and what rights, licenses, permissions, or restrictions apply to its use?"
+    },
+    {
+      "control_id": "RISK-01",
+      "domain": "P2",
+      "category": "risk",
+      "title": "System context captured \u2014 domain, stakeholders, decision impact, scale",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What is the system context: domain, stakeholders, scale, decision impact, operating environment, and dependency context?"
+    },
+    {
+      "control_id": "RISK-02",
+      "domain": "P2",
+      "category": "risk",
+      "title": "Risk classification completed \u2014 minimal, limited, high, unacceptable",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "How has the system been classified by risk, and what rationale supports that classification?"
+    },
+    {
+      "control_id": "RISK-03",
+      "domain": "P2",
+      "category": "risk",
+      "title": "Ethical impact assessment \u2014 completed ex-ante",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What ethical impacts are anticipated before implementation, and how were these identified and prioritized?"
+    },
+    {
+      "control_id": "RISK-04",
+      "domain": "P2",
+      "category": "risk",
+      "title": "Residual risk accepted by accountable owner \u2014 sign-off",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What residual risks remain after planned mitigations, and who is expected to formally accept those risks?"
+    },
+    {
+      "control_id": "SAFE-01",
+      "domain": "P7",
+      "category": "safety",
+      "title": "Safety requirements defined \u2014 harm scenarios",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What harm scenarios have been identified, and what safety requirements are planned to reduce or prevent them?"
+    },
+    {
+      "control_id": "SAFE-04",
+      "domain": "P7",
+      "category": "safety",
+      "title": "Fallback behavior \u2014 safe failure modes",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E2"
+      ],
+      "base_question": "What safe failure behavior is planned if the system is uncertain, broken, or out of scope?"
+    },
+    {
+      "control_id": "SEC-01",
+      "domain": "P8",
+      "category": "security",
+      "title": "Threat model \u2014 including misuse and abuse",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What threat model is planned, including misuse, abuse, adversarial behavior, and unauthorized access?"
+    },
+    {
+      "control_id": "SEC-03",
+      "domain": "P8",
+      "category": "security",
+      "title": "Secure SDLC \u2014 dependencies, secrets, reviews",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E3"
+      ],
+      "base_question": "What secure development practices are planned for dependencies, secrets, code review, and release hygiene?"
+    },
+    {
+      "control_id": "SEC-06",
+      "domain": "P8",
+      "category": "security",
+      "title": "Pre-trained model supply chain \u2014 provenance, licensing, safety",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "If a pre-trained or third-party base model is used, how has its provenance, licensing, known limitations, safety testing, and alignment with intended use been assessed?"
+    },
+    {
+      "control_id": "SOC-01",
+      "domain": "P11",
+      "category": "societal",
+      "title": "Intended societal benefit articulated \u2014 who benefits and how measured",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What societal benefit is the system intended to create, for whom, and how would that benefit be recognized?"
+    },
+    {
+      "control_id": "SOC-08",
+      "domain": "P11",
+      "category": "societal",
+      "title": "Equity of access considered \u2014 who is excluded by cost, language, availability",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "Who might be excluded due to cost, language, literacy, infrastructure, or access barriers, and how is that considered?"
+    },
+    {
+      "control_id": "TRAN-01",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "User-facing disclosure \u2014 AI involvement disclosed",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "How will users be clearly informed that AI is involved in generating, assisting, or shaping outputs?"
+    },
+    {
+      "control_id": "TRAN-02",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "System limitations stated \u2014 known failure modes",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1"
+      ],
+      "allowed_rtypes": [
+        "R1"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What known limitations, uncertainty conditions, and failure modes will be communicated to users or operators?"
+    },
+    {
+      "control_id": "TRAN-03",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "Explainability appropriate to context \u2014 technical and user",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "What form of explanation is planned for technical reviewers and for end users, and why is that level of explanation appropriate?"
+    },
+    {
+      "control_id": "TRAN-04",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "Documentation completeness \u2014 model card and datasheet",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R3"
+      ],
+      "required_etypes": [
+        "E4"
+      ],
+      "base_question": "What documentation set is planned for the model, data, assumptions, and intended or prohibited use?"
+    },
+    {
+      "control_id": "TRAN-05",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "Logging for accountability \u2014 inputs and outputs where appropriate",
+      "level_applicable": [
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R3"
+      ],
+      "required_etypes": [
+        "E6"
+      ],
+      "base_question": "What logging and accountability design is planned for inputs, outputs, decisions, or interventions where appropriate?"
+    },
+    {
+      "control_id": "TRAN-07",
+      "domain": "P6",
+      "category": "transparency",
+      "title": "AI identity non-deception",
+      "level_applicable": [
+        "UG-C",
+        "PG-C",
+        "Cap-C",
+        "Ind-C"
+      ],
+      "is_overlay": false,
+      "anchor_control_id": null,
+      "required_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "allowed_rtypes": [
+        "R1",
+        "R2"
+      ],
+      "required_etypes": [
+        "E1"
+      ],
+      "base_question": "If a user sincerely and directly asks whether they are interacting with a human or an AI, how will the system be designed to answer truthfully and not deceive them?"
+    }
+  ]
+}
