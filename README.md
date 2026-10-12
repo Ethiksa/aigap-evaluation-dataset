@@ -21,7 +21,7 @@ AIGAP evaluates projects against a cohort-based control registry with four risk 
 |---|---|---|---|---|
 | `case_studies/recipe_suggester_LowRisk/` | RecipeSuggest — ingredient-to-recipe tool | Low Risk | 19 of 19 | Yes |
 | `case_studies/studyspark_ai_MediumRisk/` | StudySpark AI — university staff drafting assistant | Medium Risk | 42 of 42 | Yes |
-| `case_studies/creditscore_ai_HighRisk/` | CreditScore AI — bank credit risk scoring | High Risk | 76 of 76 | Evidence constructed; pipeline execution pending |
+| `case_studies/creditscore_ai_HighRisk/` | CreditScore AI — bank credit risk scoring | High Risk | 76 of 76 | Yes |
 | `case_studies/mediscan_ai_CriticalRisk/` | MediScan AI — clinical imaging diagnostic assistant | Critical Risk | 13 (representative subset of 84) | Yes |
 | `resubmission_experiment/` | Five-round resubmission trace on a single control (GOV-01) | Medium Risk | 1 control, 5 rounds | Manual, iterative |
 
